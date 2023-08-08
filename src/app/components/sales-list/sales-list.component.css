@@ -1,0 +1,99 @@
+/*
+======================================
+; Title: sales-list.component.css
+; Author: Chris Gorham
+; Date Created: 15 July 2023
+; Last Updated: 27 July 2023
+; Description: This code supports CSS functionality for the Sales list component
+; Sources Used: N/A
+;=====================================
+*/
+
+.black-header {
+  background-color: black;
+}
+
+.white-text {
+  color: white;
+}
+
+.table {
+  padding: 20px;
+  border: 1px;
+}
+
+
+.collapsible {
+  overflow: hidden;
+}
+
+section {
+  width: 360px;
+  background-color: lightgray;
+  font: 16px/20px sans-serif;
+  box-sizing: border-box;
+}
+
+section.collapsible {
+  color: white;
+  background-color: coral;
+}
+
+
+.button-position {
+text-align: right;
+padding-right: 300px;
+}
+
+
+.orange {
+  background-color: orange;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  list-style: none;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.yellow {
+  background-color: #FFF000;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.sale {
+  font-size: large;
+  font-weight: bold;
+}
+
+.profit {
+  text-align: end;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.refresh {
+  text-align: end;
+}
+
+.addItemDescription {
+  text-align: center;
+}
+
+.addItemInput {
+  width: 300px;
+  border-radius: 10px;
+  border: 1px solid;
+}
+
+
+.right {
+  text-align: right;
+}
+

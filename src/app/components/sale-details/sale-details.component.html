@@ -1,0 +1,168 @@
+<!--
+======================================
+; Title: sale-details.component.html
+; Author: Chris Gorham
+; Date Created: 21 July 2023
+; Last Updated: 04 August 2023
+; Description: This code supports the HTML functionality for the Sale Details Component
+; Sources Used:
+; Angular Forms Overview https://angular.io/guide/forms-overview
+; Angular Validators https://angular.io/api/forms/Validators
+; BezKoder Angular 10 CRUD Application Tutorial https://www.bezkoder.com/angular-10-node-js-express-mysql/
+;=====================================
+-->
+
+
+  <div style="width: 800px; margin: auto;">
+    <div *ngIf="currentSale" class="edit-form">
+    <h2>Edit A Sale</h2>
+    <form>
+
+      <!--Row 1-->
+      <div fxLayout="row" class="form-group">
+        <label for="itemDescription">Item Description:</label>
+      </div>
+      <div fxLayout="row">
+        <select name="itemDescription" class="form-select" [(ngModel)]="currentSale.itemDescription" id="itemDescription">
+          <option class="item-styler" *ngFor="let description of descriptions" placeholder="Select An Option">{{ description.description }}</option>
+        </select>
+      </div>
+      <div class="submit-form"><br>
+        <i>Item Description not in the list?</i>&nbsp;&nbsp;&nbsp;
+        <button class="theme-button-mini" *ngIf="!addDescriptionCollapsed" (click)="addDescriptionCollapse()">Close</button>
+        <button class="theme-button-mini" *ngIf="addDescriptionCollapsed" (click)="addDescriptionExpand()">Add New</button>
+      </div>
+
+      <!--Add A New Item Description Row (Hidden to Start)-->
+      <div class="collapsible" [@collapse]="addDescriptionCollapsed">
+        <app-description-create (addItemEmitter)="updateItemsHandler($event)"></app-description-create>
+      </div>
+
+
+      <br>
+      <br>
+      <!--Row 2-->
+      <div fxLayout="row" class="submit-form">
+        <div fxFlex="25"><label for="salesDate">Sales Date:</label></div>
+        <div fxFlex="25"><label for="salesPrice">Sales Price:</label></div>
+        <div fxFlex="25"><label for="etsyTransactionFee">Etsy Transaction Fee:</label></div>
+        <div fxFlex><label for="etsyMarketingFee">Etsy Marketing Fee:</label></div>
+      </div>
+      <div fxLayout="row" class="submit-form">
+        <input type="text" class="form-control" id="salesDate" [(ngModel)]="currentSale.salesDate" name="salesDate">
+
+        <input type="text" class="form-control" id="salesPrice" [(ngModel)]="currentSale.salesPrice" name="salesPrice">
+
+        <input type="text" class="form-control" id="etsyTransactionFee"[(ngModel)]="currentSale.etsyTransactionFee" name="etsyTransactionFee">
+
+        <input
+        type="text"
+        class="form-control"
+        id="etsyMarketingFee"
+        [(ngModel)]="currentSale.etsyMarketingFee"
+        name="etsyMarketingFee">
+      </div>
+      <br>
+      <!--Row 3-->
+      <div fxLayout="row" class="submit-form">
+        <div fxFlex="25"><label for="etsyProcessingFee">Etsy Processing Fee:</label></div>
+        <div fxFlex="25"><label for="etsyListingFee">Etsy Listing Fee:</label></div>
+        <div fxFlex="25"><label for="etsyShippingFee">Etsy Shipping Fee:</label></div>
+        <div fxFlex><label for="etsyShippingFee">Shipping Cost:</label></div>
+      </div>
+      <div fxLayout="row" class="submit-form">
+
+        <input
+        type="text"
+        class="form-control"
+        id="etsyProcessingFee"
+        [(ngModel)]="currentSale.etsyProcessingFee"
+        name="etsyProcessingFee">
+      <input
+        type="text"
+        class="form-control"
+        id="etsyListingFee"
+        [(ngModel)]="currentSale.etsyListingFee"
+        name="etsyListingFee">
+        <input
+        type="text"
+        class="form-control"
+        id="etsyShippingFee"
+        [(ngModel)]="currentSale.etsyShippingFee"
+        name="etsyShippingFee">
+        <input
+            type="text"
+            class="form-control"
+            id="shippingCost"
+            [(ngModel)]="currentSale.shippingCost"
+            name="shippingCost">
+      </div>
+      <br>
+      <!--Row 4-->
+      <div fxLayout="row" class="submit-form">
+        <div fxFlex="50"><label for="customBoxCost">Custom Box Cost:</label></div>
+        <div fxFlex><label for="oldMaterialOffset">Old Material Offset:</label></div>
+      </div>
+      <div fxLayout="row" class="submit-form">
+        <input
+        type="text"
+        class="form-control"
+        id="customBoxCost"
+        [(ngModel)]="currentSale.customBoxCost"
+        name="customBoxCost">
+    <input
+        type="text"
+        class="form-control"
+        id="oldMaterialOffset"
+        [(ngModel)]="currentSale.oldMaterialOffset"
+        name="oldMaterialOffset">
+      </div>
+      <br>
+
+      <!--Row 6-->
+      <div fxLayout="row" class="submit-form">
+        <div fxFlex><label for="notes">Notes:</label></div>
+      </div>
+      <div fxLayout="row" class="submit-form">
+            <textarea
+                rows="5" cols="30"
+                class="form-control"
+                id="notes"
+                [(ngModel)]="currentSale.notes"
+                name="notes"></textarea>
+
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentSale.published ? "Shipped" : "Pending" }}
+      </div>
+    </form>
+    <br><br>
+    <button type="submit" mat-raised-button class="theme-button-mini-yellow" *ngIf="currentSale.published" (click)="updatePublished(false)">
+      Mark Pending
+    </button>
+    <button type="submit" mat-raised-button *ngIf="!currentSale.published" class="theme-button-mini-orange" (click)="updatePublished(true)">
+      Mark Shipped
+    </button>
+    &nbsp;
+    <button type="submit" mat-raised-button class="theme-button-mini"
+    (click)="updateSale()">
+    Update
+  </button>&nbsp;
+
+    <button class="danger" mat-raised-button (click)="deleteSale()">
+      Delete
+    </button>
+
+    <br><br>
+    <p class="update-message">{{ message }} </p>
+  </div><br><br>
+
+  <div *ngIf="!currentSale">
+    <br>
+    <p>Cannot access this Sale...</p>
+  </div>
+</div>
+

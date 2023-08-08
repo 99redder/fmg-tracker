@@ -1,0 +1,14 @@
+/*
+======================================
+; Title: add-advert.component.css
+; Author: Chris Gorham
+; Date Created: 05 August 2023
+; Last Updated: 05 August 2023
+; Description: This code supports styling for the Add Advert Component
+; Sources Used: N/A
+;=====================================
+*/
+
+.advert-description-width {
+  width: 50%;
+}

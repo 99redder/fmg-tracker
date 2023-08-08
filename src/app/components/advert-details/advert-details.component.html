@@ -1,0 +1,100 @@
+<!--
+======================================
+; Title: advert-details.component.html
+; Author: Chris Gorham
+; Date Created: 05 August 2023
+; Last Updated: 05 August 2023
+; Description: This code supports the HTML functionality for the Advert Details Component
+; Sources Used:
+; Angular Forms Overview https://angular.io/guide/forms-overview
+; Angular Validators https://angular.io/api/forms/Validators
+; BezKoder Angular 10 CRUD Application Tutorial https://www.bezkoder.com/angular-10-node-js-express-mysql/
+;=====================================
+-->
+
+<div style="width: 600px; margin: auto;">
+  <div *ngIf="currentAdvert" class="edit-form">
+    <h2>Edit An Advert</h2>
+    <form>
+      <div class="form-group">
+        <label for="advertDescription">Advert Description:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="advertDescription"
+          [(ngModel)]="currentAdvert.advertDescription"
+          name="advertDescription">
+      </div><br>
+      <div class="form-group">
+        <label for="dateCharged">Date Charged:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="dateCharged"
+          [(ngModel)]="currentAdvert.dateCharged"
+          name="dateCharged">
+          <br>
+        <label for="amtCharged">Amount Charged:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="amtCharged"
+          [(ngModel)]="currentAdvert.amtCharged"
+          name="amtCharged">
+          <br>
+        <label for="notes">Notes:</label>
+        <textarea
+            rows="5" cols="30"
+            class="form-control"
+            id="notes"
+            [(ngModel)]="currentAdvert.notes"
+            name="notes"></textarea>
+      </div>
+      <br>
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentAdvert.published ? "Completed" : "Pending" }}
+      </div>
+    </form>
+    <br><br>
+    <button
+      type="submit"
+      mat-raised-button
+      class="theme-button-mini-yellow"
+      *ngIf="currentAdvert.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      type="submit"
+      mat-raised-button
+      *ngIf="!currentAdvert.published"
+      class="theme-button-mini-orange"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
+    &nbsp;
+    <button
+    type="submit"
+    mat-raised-button
+    class="theme-button-mini"
+    (click)="updateAdvert()"
+  >
+    Update
+  </button>&nbsp;
+
+    <button class="danger" mat-raised-button (click)="deleteAdvert()">
+      Delete
+    </button>
+
+    <br><br>
+    <p class="update-message">{{ message }} </p>
+  </div><br><br>
+
+  <div *ngIf="!currentAdvert">
+    <br>
+    <p>Cannot access this Advert...</p>
+  </div>
+</div>

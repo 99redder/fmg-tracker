@@ -1,0 +1,23 @@
+/*
+======================================
+; Title: add-supply.component.css
+; Author: Chris Gorham
+; Date Created: 27 July 2023
+; Last Updated: 31 July 2023
+; Description: This code supports styling for the Add Supply Component
+; Sources Used: N/A
+;=====================================
+*/
+
+div {
+  display: inline-block;
+}
+
+div label {
+  display: block;
+}
+
+.item-name-width {
+  width: 50%;
+}
+

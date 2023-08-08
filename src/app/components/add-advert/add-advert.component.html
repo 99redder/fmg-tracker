@@ -1,0 +1,96 @@
+<!--
+======================================
+; Title: add-advert.component.html
+; Author: Chris Gorham
+; Date Created: 05 August 2023
+; Last Updated: 05 August 2023
+; Description: This code supports the HTML functionality for the Add Advert Component
+; Sources Used:
+; Angular Forms Overview https://angular.io/guide/forms-overview
+; Angular Validators https://angular.io/api/forms/Validators
+; BezKoder Angular 10 CRUD Application Tutorial https://www.bezkoder.com/angular-10-node-js-express-mysql/
+;=====================================
+-->
+
+<div style="width: 1200px;" [formGroup]="addAdvertForm">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+          <br><h2>Add An Advert</h2>
+
+<!--Error Messages-->
+
+    <!-- Advert Description Error Message-->
+    <div *ngIf="form.advertDescription.errors && form.advertDescription.touched">
+    <div class="msg-error">
+    Error: Advert Description is a required input
+      </div>
+      </div>
+
+    <!-- Date Charged Error Message-->
+    <div *ngIf="form.dateCharged.errors && form.dateCharged.touched">
+      <div class="msg-error">
+      Error: Date Charged is a required input and must be in the following format: yyyy-mm-dd
+        </div>
+        </div>
+
+    <!-- Amount Charged Error Message-->
+    <div *ngIf="form.amtCharged.errors && form.amtCharged.touched">
+      <div class="msg-error">
+      Error: Amount Charged is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Notes Cost Error Message-->
+    <div *ngIf="form.notes.errors && form.notes.touched">
+      <div class="msg-error">
+      Error: Notes must not contain any special characters other than periods, colons, and commas
+      </div>
+      </div><br>
+
+
+<!--Top Row-->
+          <label>Advert Description:</label>
+          <input id="advertDescription" required [(ngModel)]="advert.advertDescription" class="form-control advert-description-width" type="text" formControlName="advertDescription"><br>
+
+
+<!--Row 1-->
+
+        <!--Date Charged Input-->
+        <div class="submit-form padding-right">
+        <label>Date Charged:</label>
+        <input id="dateCharged" required [(ngModel)]="advert.dateCharged" class="form-control advert-description-width" placeholder="yyyy-mm-dd" type="text" formControlName="dateCharged">
+        </div><br>
+
+
+
+        <!--Amount Charged Input-->
+        <div class="submit-form padding-right">
+        <label>Amount Charged:</label>
+        <input id="amtCharged" required [(ngModel)]="advert.amtCharged" class="form-control advert-description-width" type="text" formControlName="amtCharged">
+        </div>
+
+        <br><br>
+
+<!--Row 2-->
+
+        <!--Notes Input-->
+        <label for="notes">Notes:</label>
+        <textarea rows="5" cols="40" class="form-control notes-width" id="notes" [(ngModel)]="advert.notes"
+        name="notes" formControlName="notes"></textarea>
+
+<br>
+
+<!--Submit New Advert Button-->
+
+      <button [disabled]="!addAdvertForm.valid" mat-raised-button type="submit" (click)="saveAdvert()" class="theme-button">Submit New Advert</button>
+      <br><br>
+      <p><i>** All fields except notes are required. Submit Button will turn green once all requirements are met.</i></p>
+      </div>
+
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="theme-button"  mat-raised-button (click)="newAdvert()">Add</button>
+    </div>
+  </div>
+</div>

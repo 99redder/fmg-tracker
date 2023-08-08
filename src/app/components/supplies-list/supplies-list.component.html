@@ -1,0 +1,142 @@
+<!--
+======================================
+; Title: supplies-list.component.html
+; Author: Chris Gorham
+; Date Created: 27 July 2023
+; Last Updated: 02 August 2023
+; Description: This code supports the HTML functionality for the Supplies List Component
+; Sources Used: N/A
+;=====================================
+-->
+
+<!--Add a Supply Collapsible Buttons-->
+<div class="button-position">
+  <button class="theme-button"  mat-raised-button *ngIf="addASupplyCollapsed" (click)="addASupplyExpand()">Add a Supply</button>
+  <button class="theme-button"  mat-raised-button *ngIf="!addASupplyCollapsed" (click)="addASupplyCollapse()">Close Add a Supply</button><br><br>
+</div>
+
+<!--Beginning of Add Supply Functionality-->
+<div class="collapsible" [@collapse]="addASupplyCollapsed">
+  <app-add-supply></app-add-supply>
+</div>
+<br>
+
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Item Name"
+        [(ngModel)]="itemName">
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchItemName()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12"><br><br>
+    <div>
+      <div fxFlex="10"><h2>All Supplies:</h2></div>
+      <div fxFlex="10"><h4 style="background-color: orange; padding-left: 6px;" >Received</h4></div>
+      <div fxFlex="10"><h4 style="background-color: #FFF000; padding-left: 6px;">Pending</h4></div>
+      <div>&nbsp;&nbsp;&nbsp;</div>
+      <div fxFlex="25" class="refresh"><button mat-raised-button (click)="refreshList()" type="submit" class="theme-button">Refresh Supply List</button></div>
+    </div>
+
+    <!--Pagination Pages Portion Start-->
+    <div class="col-md-6">
+      <pagination-controls class="paginate"
+        previousLabel="Prev"
+        nextLabel="Next"
+        responsive="true"
+        (pageChange)="handlePageChange($event)"
+      ></pagination-controls>
+    </div>
+    <!--Pagination Pages Portion End-->
+
+    <div class="col-md-16">
+      <div fxFlex="35">
+        <ul class="list-group">
+          <li [ngClass]="{'orange': supply.published == true, 'list-group-item yellow': !supply.published == true }"
+            *ngFor="let supply of supplies | paginate: {
+              itemsPerPage: pageSize,
+              currentPage: page,
+              totalItems: count
+            }; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveSupply(supply, i)"> <span class="supply">Supply {{ supply.id }} &nbsp;</span>
+          {{ supply.itemName }} purchased on: {{ supply.purchaseDate}}
+          </li><br>
+        </ul>
+      </div>
+
+      <div fxFLex class="medium-padding-left">
+        <div>
+          <div *ngIf="currentSupply">
+            <mat-card>
+            <h2>Supply Info:</h2>
+            <div>
+              <label><strong>Item Name:</strong></label>
+              {{ currentSupply.itemName }}
+            </div>
+            <div>
+              <label><strong>Purchase Date:</strong></label>
+              {{ currentSupply.purchaseDate }}
+            </div>
+            <div>
+              <label><strong>Item Cost:</strong></label>
+              {{ '$' + (currentSupply.itemCost) }}
+            </div>
+            <div>
+              <label><strong>Item Tax:</strong></label>
+              {{ '$' + (currentSupply.itemTax) }}
+            </div>
+            <div>
+              <label><strong>Item Total Cost:</strong></label>
+              {{ '$' + (currentSupply.itemTotalCost) }}
+            </div>
+            <div>
+              <label><strong>Notes:</strong></label>
+              {{ currentSupply.notes }}
+            </div>
+            <div>
+              <label><strong>Status:</strong></label>
+              {{ currentSupply.published ? "Received" : "Pending" }}
+            </div>
+            <br>
+            <button type="submit" class="theme-button" mat-raised-button routerLink="/supplies/{{ currentSupply.id }}">
+              Edit
+            </button>
+            </mat-card>
+          </div>
+
+          <div *ngIf="!currentSupply">
+            <br><br>
+            <h2>Click on a Supply for all of the details...</h2>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+
+
+  <!--Pagination Items Per Page Portion Start-->
+  <div class="col-md-8">
+    <h3>Supplies per page:
+    <select (change)="handlePageSizeChange($event)">
+      <option *ngFor="let size of pageSizes" [ngValue]="size">
+        {{ size }}
+      </option>
+    </select>
+  </h3>
+
+
+<!--Pagination Items Per Page Portion End-->

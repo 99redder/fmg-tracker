@@ -1,0 +1,18 @@
+<!--
+======================================
+; Title: description-create.component.html
+; Author: Chris Gorham
+; Date Created: 03 August 2023
+; Last Updated: 03 August 2023
+; Description: This code supports the HTML functionality for the Description Create Component
+; Sources Used: N/A
+;=====================================
+-->
+
+<form fxLayout="column">
+  <mat-form-field appearance="fill">
+    <mat-label>Type here and click Add...</mat-label>
+    <input type="text" name="description" matInput [(ngModel)]="newDescription.description">
+  </mat-form-field>
+  <button class="theme-button-mini" (click)="addItem()">Add</button>
+</form>

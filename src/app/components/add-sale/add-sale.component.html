@@ -1,0 +1,226 @@
+<!--
+======================================
+; Title: add-sale.component.html
+; Author: Chris Gorham
+; Date Created: 21 July 2023
+; Last Updated: 04 August 2023
+; Description: This code supports the HTML functionality for the Add Sale Component
+; Sources Used:
+; Angular Forms Overview https://angular.io/guide/forms-overview
+; Angular Validators https://angular.io/api/forms/Validators
+; BezKoder Angular 10 CRUD Application Tutorial https://www.bezkoder.com/angular-10-node-js-express-mysql/
+;=====================================
+-->
+
+<div style="width: 1200px;" [formGroup]="addSaleForm">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+          <br><h2>Add A Sale</h2>
+
+
+<!--Error Messages-->
+
+    <!-- Item Description Error Message-->
+    <div *ngIf="form.itemDescription.errors && form.itemDescription.touched">
+    <div class="msg-error">
+    Error: Item Description is a required input
+      </div>
+      </div>
+
+    <!-- Sales Date Error Message-->
+    <div *ngIf="form.salesDate.errors && form.salesDate.touched">
+      <div class="msg-error">
+      Error: Sales Date is a required input and must be in the following format: yyyy-mm-dd
+        </div>
+        </div>
+
+    <!-- Sales Price Error Message-->
+    <div *ngIf="form.salesPrice.errors && form.salesPrice.touched">
+      <div class="msg-error">
+      Error: Sales Price is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Etsy Transaction Fee Error Message-->
+    <div *ngIf="form.etsyTransactionFee.errors && form.etsyTransactionFee.touched">
+      <div class="msg-error">
+      Error: Etsy Transaction Fee is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Etsy Marketing Fee Error Message-->
+    <div *ngIf="form.etsyMarketingFee.errors && form.etsyMarketingFee.touched">
+      <div class="msg-error">
+      Error: Etsy Marketing Fee is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Etsy Processing Fee Error Message-->
+    <div *ngIf="form.etsyProcessingFee.errors && form.etsyProcessingFee.touched">
+      <div class="msg-error">
+      Error: Etsy Processing Fee is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Etsy Listing Fee Error Message-->
+    <div *ngIf="form.etsyListingFee.errors && form.etsyListingFee.touched">
+      <div class="msg-error">
+      Error: Etsy Listing Fee is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Etsy Shipping Fee Error Message-->
+    <div *ngIf="form.etsyShippingFee.errors && form.etsyShippingFee.touched">
+      <div class="msg-error">
+      Error: Etsy Shipping Fee is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Shipping Cost Error Message-->
+    <div *ngIf="form.shippingCost.errors && form.shippingCost.touched">
+      <div class="msg-error">
+      Error: Shipping Cost is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Old Material Offset Error Message-->
+    <div *ngIf="form.oldMaterialOffset.errors && form.oldMaterialOffset.touched">
+      <div class="msg-error">
+      Error: Old Material Offset is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Custom Box Cost Error Message-->
+    <div *ngIf="form.customBoxCost.errors && form.customBoxCost.touched">
+      <div class="msg-error">
+      Error: Custom Box Cost is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div><br>
+
+    <!-- Notes Cost Error Message-->
+    <div *ngIf="form.notes.errors && form.notes.touched">
+      <div class="msg-error">
+      Error: Notes must not contain any special characters other than periods, colons, and commas
+      </div>
+      </div><br>
+
+
+
+<!--Top Row-->
+          <div class="submit-form padding-right">
+            <label>Item Description:</label>
+            <select formControlName="itemDescription" required name="itemDescription" class="form-select item-styler" [(ngModel)]="sale.itemDescription">
+              <option class="item-styler" *ngFor="let description of descriptions" placeholder="Select An Option">{{ description.description }}</option>
+            </select>
+          </div>
+
+          <div class="submit-form">
+            <i>Item Description not in the list?</i>&nbsp;&nbsp;&nbsp;
+            <button class="theme-button-mini" *ngIf="!addDescriptionCollapsed" (click)="addDescriptionCollapse()">Close</button>
+            <button class="theme-button-mini" *ngIf="addDescriptionCollapsed" (click)="addDescriptionExpand()">Add New</button>
+          </div><br><br>
+
+
+<!--Add A New Item Description Row (Hidden to Start)-->
+      <div class="collapsible" [@collapse]="addDescriptionCollapsed">
+        <app-description-create (addItemEmitter)="updateItemsHandler($event)"></app-description-create>
+      </div><br>
+
+
+
+<!--Row 1-->
+
+        <!--Sales Date Input-->
+        <div class="submit-form padding-right">
+        <label>Sales Date:</label>
+        <input id="salesDate" required [(ngModel)]="sale.salesDate" class="form-control" type="text" formControlName="salesDate">
+        </div>
+
+
+
+        <!--Sales Price Input-->
+        <div class="submit-form padding-right">
+        <label>Sales Price:</label>
+        <input id="salesPrice" required [(ngModel)]="sale.salesPrice" class="form-control" type="text" formControlName="salesPrice">
+        </div>
+
+        <!--Etsy Transaction Fee Input-->
+        <div class="submit-form padding-right">
+        <label><br>Etsy Transaction Fee:</label>
+        <input id="etsyTransactionFee" [(ngModel)]="sale.etsyTransactionFee" class="form-control" type="text" formControlName="etsyTransactionFee">
+        </div>
+
+        <!--Etsy Marketing Fee Input-->
+        <div class="submit-form padding-right">
+        <label><br>Etsy Marketing Fee:</label>
+        <input id="etsyMarketingFee" [(ngModel)]="sale.etsyMarketingFee" class="form-control" type="text" formControlName="etsyMarketingFee">
+        </div>
+
+        <br>
+
+<!--Row 2-->
+
+        <!--Etsy Processing Fee Input-->
+        <div class="submit-form padding-right">
+        <label>Etsy Processing Fee:</label>
+        <input id="etsyProcessingFee" [(ngModel)]="sale.etsyProcessingFee" class="form-control" type="text" formControlName="etsyProcessingFee">
+        </div>
+
+        <!--Etsy Listing Fee Input-->
+        <div class="submit-form padding-right">
+        <label>Etsy Listing Fee:</label>
+        <input id="etsyListingFee" [(ngModel)]="sale.etsyListingFee" class="form-control" type="text" formControlName="etsyListingFee">
+        </div>
+
+        <!--Etsy Shipping Fee Input-->
+        <div class="submit-form padding-right">
+        <label>Etsy Shipping Fee:</label>
+        <input id="etsyShippingFee" [(ngModel)]="sale.etsyShippingFee" class="form-control" type="text" formControlName="etsyShippingFee">
+        </div>
+
+        <!--Shipping Cost Input-->
+        <div class="submit-form padding-right">
+        <label><br>Shipping Cost:</label>
+        <input id="shippingCost" [(ngModel)]="sale.shippingCost" class="form-control" type="text" formControlName="shippingCost">
+        </div>
+
+
+<br><br>
+
+<!--Row 3-->
+
+        <!--Old Material Offset Input-->
+        <div class="submit-form padding-right">
+        <label>Old Material Offset:</label>
+        <input id="oldMaterialOffset" [(ngModel)]="sale.oldMaterialOffset" class="form-control" type="text" formControlName="oldMaterialOffset">
+        </div>
+
+        <!--Custom Box Cost Input-->
+        <div class="submit-form padding-right">
+        <label>Custom Box Cost:</label>
+        <input id="customBoxCost" [(ngModel)]="sale.customBoxCost" class="form-control" type="text" formControlName="customBoxCost">
+        </div><br><br>
+
+<!--Row 4-->
+
+        <!--Notes Input-->
+        <label for="notes">Notes:</label>
+        <textarea rows="5" cols="40" class="form-control notes-width" id="notes" [(ngModel)]="sale.notes" formControlName="notes"
+        name="notes"></textarea>
+
+<br>
+
+<!--Submit New Sale Button-->
+
+      <button [disabled]="!addSaleForm.valid" mat-raised-button type="submit" (click)="saveSale()" class="theme-button">Submit New Sale</button>
+      <br><br>
+      <p><i>** All fields except notes are required. Add a zero value for entries that do not apply. Button will turn green once all requirements are met.</i></p>
+      </div>
+
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,50 @@
+<!--
+======================================
+; Title: sign-in.component.html
+; Author: Chris Gorham
+; Date Created: 26 July 2023
+; Last Updated: 26 July 2023
+; Description: This code supports the sign in page
+; Sources Used:
+; Bellevue University WEB-425 Exercise 7.2 Instructions
+=====================================
+-->
+
+<div fxLayout="column">
+
+  <div fxFlex>
+    <mat-card class="mat-elevation-z8 signin-container center">
+      <img src="./assets/logo.png" width="50%"><br><br>
+    <mat-card-title>User Sign In</mat-card-title>
+    <mat-card-subtitle>You must enter a valid Login Code to proceed.</mat-card-subtitle>
+    <mat-card-content>
+      <!-- div class for the error message which will only show up if there is an error-->
+      <div class="msg-error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+        <mat-card class="mat-elevation-z0" fxLayout="column" fxLayoutGap="10px">
+          <!--form group tells angular to look for the formGroup code in the typescript file; signinForm.reset clears out all form values-->
+          <form [formGroup]="signinForm" (ngSubmit)="onSubmit(); signinForm.reset()">
+            <mat-card-content>
+              <mat-form-field fxFlex appearance="fill">
+                <mat-label for="txtLoginCode" id="lblLoginCode">Login Code</mat-label>
+                <input type="text" matInput formControlName="loginCode" id="txtLoginCode" name="txtLoginCode">
+              </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions>
+              <button type="submit" fxFlex mat-raised-button class="theme-button">Submit</button>
+            </mat-card-actions>
+
+          </form>
+
+        </mat-card>
+
+    </mat-card-content>
+
+    </mat-card>
+
+  </div>
+
+
+</div>

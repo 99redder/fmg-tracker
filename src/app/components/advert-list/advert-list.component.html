@@ -1,0 +1,138 @@
+<!--
+======================================
+; Title: advert-list.component.html
+; Author: Chris Gorham
+; Date Created: 05 August 2023
+; Last Updated: 05 August 2023
+; Description: This code supports the HTML functionality for the Advert List Component
+; Sources Used: N/A
+;=====================================
+-->
+
+<!--Add an Advert Collapsible Buttons-->
+<div class="button-position">
+  <button class="theme-button"  mat-raised-button *ngIf="addAdvertCollapsed" (click)="addAdvertExpand()">Add an Advert</button>
+  <button class="theme-button"  mat-raised-button *ngIf="!addAdvertCollapsed" (click)="addAdvertCollapse()">Close Add an Advert</button><br><br>
+</div>
+
+<!--Beginning of Add Advert Functionality-->
+<div class="collapsible" [@collapse]="addAdvertCollapsed">
+  <app-add-advert></app-add-advert>
+</div>
+<br>
+
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Advert Description"
+        [(ngModel)]="advertDescription">
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchAdvertDescription()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12"><br><br>
+    <div>
+      <div fxFlex="10"><h2>All Adverts:</h2></div>
+      <div fxFlex="10"><h4 style="background-color: orange; padding-left: 6px;" >Completed</h4></div>
+      <div fxFlex="10"><h4 style="background-color: #FFF000; padding-left: 6px;">Pending</h4></div>
+      <div>&nbsp;&nbsp;&nbsp;</div>
+      <div fxFlex="25" class="refresh"><button mat-raised-button (click)="refreshList()" type="submit" class="theme-button">Refresh Advert List</button></div>
+    </div>
+
+    <!--Pagination Pages Portion Start-->
+    <div class="col-md-6">
+      <pagination-controls class="paginate"
+        previousLabel="Prev"
+        nextLabel="Next"
+        responsive="true"
+        (pageChange)="handlePageChange($event)"
+      ></pagination-controls>
+    </div>
+    <!--Pagination Pages Portion End-->
+
+    <div class="col-md-16">
+      <div fxFlex="35">
+        <ul class="list-group">
+          <li [ngClass]="{'orange': advert.published == true, 'list-group-item yellow': !advert.published == true }"
+            *ngFor="let advert of advertising | paginate: {
+              itemsPerPage: pageSize,
+              currentPage: page,
+              totalItems: count
+            }; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveAdvert(advert, i)"> <span class="advert">Advert {{ advert.id }} &nbsp;</span>
+          {{ advert.advertDescription }} charged on: {{ advert.dateCharged}}
+
+          <!--Advert Amount to show if the Advert is Published-->
+          <div *ngIf="advert.published == true" fxFlex class="advert-charge">Amount Charged:&nbsp;{{ '$' + (advert.amtCharged) }}</div>
+
+          </li><br>
+        </ul>
+      </div>
+
+      <div fxFLex class="medium-padding-left">
+        <div>
+          <div *ngIf="currentAdvert">
+            <mat-card>
+            <h2>Advert Info:</h2>
+            <div>
+              <label><strong>Advert Description:</strong></label>
+              {{ currentAdvert.advertDescription }}
+            </div>
+            <div>
+              <label><strong>Date Charged:</strong></label>
+              {{ currentAdvert.dateCharged }}
+            </div>
+            <div>
+              <label><strong>Amount Charged:</strong></label>
+              {{ '$' + (currentAdvert.amtCharged) }}
+            </div>
+            <div>
+              <label><strong>Notes:</strong></label>
+              {{ currentAdvert.notes }}
+            </div>
+            <div>
+              <label><strong>Status:</strong></label>
+              {{ currentAdvert.published ? "Received" : "Pending" }}
+            </div>
+            <br>
+            <button type="submit" class="theme-button" mat-raised-button routerLink="/advertising/{{ currentAdvert.id }}">
+              Edit
+            </button>
+            </mat-card>
+          </div>
+
+          <div *ngIf="!currentAdvert">
+            <br><br>
+            <h2>Click on a Advert for all of the details...</h2>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+
+
+  <!--Pagination Items Per Page Portion Start-->
+  <div class="col-md-8">
+    <h3>Supplies per page:
+    <select (change)="handlePageSizeChange($event)">
+      <option *ngFor="let size of pageSizes" [ngValue]="size">
+        {{ size }}
+      </option>
+    </select>
+  </h3>
+
+
+<!--Pagination Items Per Page Portion End-->

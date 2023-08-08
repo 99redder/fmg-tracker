@@ -1,0 +1,179 @@
+<!--
+======================================
+; Title: sales-list.component.html
+; Author: Chris Gorham
+; Date Created: 21 July 2023
+; Last Updated: 02 August 2023
+; Description: This code supports the HTML functionality for the Sales List Component
+; Sources Used:
+; Angular Forms Overview https://angular.io/guide/forms-overview
+; Angular Validators https://angular.io/api/forms/Validators
+;=====================================
+-->
+
+<!--Add a Sale Collapsible Buttons-->
+<div class="button-position">
+  <button class="theme-button"  mat-raised-button *ngIf="addASaleCollapsed" (click)="addASaleExpand()">Add a Sale</button>
+  <button class="theme-button"  mat-raised-button *ngIf="!addASaleCollapsed" (click)="addASaleCollapse()">Close Add a Sale</button><br><br>
+</div>
+
+
+
+<!--Beginning of Add Sale Functionality-->
+<div class="collapsible" [@collapse]="addASaleCollapsed">
+  <app-add-sale></app-add-sale>
+</div>
+<br>
+<!--End of Add Sale Functionality-->
+
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by Item Description"
+        [(ngModel)]="itemDescription">
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchItemDescription()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12"><br><br>
+    <div>
+      <div fxFlex="10"><h2>All Sales:</h2></div>
+      <div fxFlex="10"><h4 style="background-color: orange; padding-left: 6px;" >Shipped</h4></div>
+      <div fxFlex="10"><h4 style="background-color: #FFF000; padding-left: 6px;">Pending</h4></div>
+      <div>&nbsp;&nbsp;&nbsp;</div>
+      <div fxFlex="25" class="refresh"><button mat-raised-button (click)="refreshList()" type="submit" class="theme-button">Refresh Sales List</button></div>
+    </div>
+
+    <!--Pagination Pages Portion Start-->
+    <div class="col-md-6">
+      <pagination-controls class="paginate"
+        previousLabel="Prev"
+        nextLabel="Next"
+        responsive="true"
+        (pageChange)="handlePageChange($event)"
+      ></pagination-controls>
+    </div>
+    <!--Pagination Pages Portion End-->
+
+    <div class="col-md-16">
+      <div fxFlex="35">
+        <ul class="list-group">
+          <li [ngClass]="{'orange': sale.published == true, 'list-group-item yellow': !sale.published == true }"
+            *ngFor="let sale of sales | paginate: {
+              itemsPerPage: pageSize,
+              currentPage: page,
+              totalItems: count
+            }; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveSale(sale, i)"> <span class="sale">Sale {{ sale.id }} &nbsp;</span>
+          {{ sale.itemDescription }} sold on: {{ sale.salesDate}}
+
+          <!--Individual Sale Profit Calculation and Number Rounding only IF the Sale is Published-->
+          <div *ngIf="sale.published == true" fxFlex class="profit">Profit:&nbsp;{{ '$' + (sale.salesPrice - sale.etsyTransactionFee - sale.etsyMarketingFee - sale.etsyProcessingFee - sale.etsyListingFee - sale.etsyShippingFee - sale.shippingCost - sale.customBoxCost - sale.oldMaterialOffset | number:'1.2-2') }}</div>
+
+          </li><br>
+        </ul>
+      </div>
+
+      <div fxFLex class="medium-padding-left">
+        <div>
+          <div *ngIf="currentSale">
+            <mat-card>
+            <h2>Sale Info:</h2>
+            <div>
+              <label><strong>Item Description:</strong></label>
+              {{ currentSale.itemDescription }}
+            </div>
+            <div>
+              <label><strong>Sales Date:</strong></label>
+              {{ currentSale.salesDate }}
+            </div>
+            <div>
+              <label><strong>Sales Price:</strong></label>
+              {{ '$' + (currentSale.salesPrice) }}
+            </div>
+            <div>
+              <label><strong>Etsy Transaction Fee:</strong></label>
+              {{ '$' + (currentSale.etsyTransactionFee) }}
+            </div>
+            <div>
+              <label><strong>Etsy Marketing Fee:</strong></label>
+              {{ '$' + (currentSale.etsyMarketingFee) }}
+            </div>
+            <div>
+              <label><strong>Etsy Processing Fee:</strong></label>
+              {{ '$' + (currentSale.etsyProcessingFee) }}
+            </div>
+            <div>
+              <label><strong>Etsy Listing Fee:</strong></label>
+              {{ '$' + (currentSale.etsyListingFee) }}
+            </div>
+            <div>
+              <label><strong>Etsy Shipping Fee:</strong></label>
+              {{ '$' + (currentSale.etsyShippingFee) }}
+            </div>
+            <div>
+              <label><strong>Shipping Cost:</strong></label>
+              {{ '$' + (currentSale.shippingCost) }}
+            </div>
+            <div>
+              <label><strong>Custom Box Cost:</strong></label>
+              {{ '$' + (currentSale.customBoxCost) }}
+            </div>
+            <div>
+              <label><strong>Old Material Offset:</strong></label>
+              {{ '$' + (currentSale.oldMaterialOffset) }}
+            </div>
+            <div>
+              <label><strong>Notes:</strong></label>
+              {{ currentSale.notes }}
+            </div>
+            <div>
+              <label><strong>Status:</strong></label>
+              {{ currentSale.published ? "Shipped" : "Pending" }}
+            </div>
+            <br>
+            <button type="submit" class="theme-button" mat-raised-button routerLink="/sales/{{ currentSale.id }}">
+              Edit
+            </button>
+            </mat-card>
+          </div>
+
+          <div *ngIf="!currentSale">
+            <br><br>
+            <h2>Click on a Sale for all of the details...</h2>
+
+
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+
+
+  <!--Pagination Items Per Page Portion Start-->
+  <div class="col-md-8">
+    <h3>Sales per page:
+    <select (change)="handlePageSizeChange($event)">
+      <option *ngFor="let size of pageSizes" [ngValue]="size">
+        {{ size }}
+      </option>
+    </select>
+  </h3>
+
+
+<!--Pagination Items Per Page Portion End-->
+
+

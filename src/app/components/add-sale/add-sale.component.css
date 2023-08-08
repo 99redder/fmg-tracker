@@ -1,0 +1,32 @@
+/*
+======================================
+; Title: add-sale.component.css
+; Author: Chris Gorham
+; Date Created: 12 July 2023
+; Last Updated: 03 August 2023
+; Description: This code supports styling for the Add Sale Component
+; Sources Used: N/A
+;=====================================
+*/
+
+div {
+  display: inline-block;
+}
+
+div label {
+  display: block;
+}
+
+.item-description-width {
+  width: 40%;
+}
+
+
+/* Styles the Item Description Selection Box */
+.item-styler {
+  width: 100%;
+}
+
+.description-create {
+  text-align: right;
+}

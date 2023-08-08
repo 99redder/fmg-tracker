@@ -1,0 +1,123 @@
+<!--
+======================================
+; Title: add-supply.component.html
+; Author: Chris Gorham
+; Date Created: 27 July 2023
+; Last Updated: 31 July 2023
+; Description: This code supports the HTML functionality for the Add Supply Component
+; Sources Used:
+; Angular Forms Overview https://angular.io/guide/forms-overview
+; Angular Validators https://angular.io/api/forms/Validators
+; BezKoder Angular 10 CRUD Application Tutorial https://www.bezkoder.com/angular-10-node-js-express-mysql/
+;=====================================
+-->
+
+<div style="width: 1200px;" [formGroup]="addSupplyForm">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+          <br><h2>Add A Supply</h2>
+
+<!--Error Messages-->
+
+    <!-- Item Name Error Message-->
+    <div *ngIf="form.itemName.errors && form.itemName.touched">
+    <div class="msg-error">
+    Error: Item Name is a required input
+      </div>
+      </div>
+
+    <!-- Purchase Date Error Message-->
+    <div *ngIf="form.purchaseDate.errors && form.purchaseDate.touched">
+      <div class="msg-error">
+      Error: Purchase Date is a required input and must be in the following format: yyyy-mm-dd
+        </div>
+        </div>
+
+    <!-- Item Cost Error Message-->
+    <div *ngIf="form.itemCost.errors && form.itemCost.touched">
+      <div class="msg-error">
+      Error: Item Cost is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Item Tax Error Message-->
+    <div *ngIf="form.itemTax.errors && form.itemTax.touched">
+      <div class="msg-error">
+      Error: Item Tax is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Item Total Cost Error Message-->
+    <div *ngIf="form.itemTotalCost.errors && form.itemTotalCost.touched">
+      <div class="msg-error">
+      Error: Item Total Cost is a required input and must be a numeric value with NO COMMAS or DOLLAR SIGNS ($)
+      </div>
+      </div>
+
+    <!-- Notes Cost Error Message-->
+    <div *ngIf="form.notes.errors && form.notes.touched">
+      <div class="msg-error">
+      Error: Notes must not contain any special characters other than periods, colons, and commas
+      </div>
+      </div><br>
+
+
+<!--Top Row-->
+          <label>Item Name:</label>
+          <input id="itemName" required [(ngModel)]="supply.itemName" class="form-control item-name-width" type="text" formControlName="itemName">
+
+
+<!--Row 1-->
+
+        <!--Purchase Date Input-->
+        <div class="submit-form padding-right">
+        <label>Purchase Date:</label>
+        <input id="purchaseDate" required [(ngModel)]="supply.purchaseDate" class="form-control" type="text" formControlName="purchaseDate">
+        </div>
+
+
+
+        <!--Item Cost Input-->
+        <div class="submit-form padding-right">
+        <label>Item Cost:</label>
+        <input id="itemCost" required [(ngModel)]="supply.itemCost" class="form-control" type="text" formControlName="itemCost">
+        </div>
+
+        <!--Item Tax Input-->
+        <div class="submit-form padding-right">
+        <label><br>Item Tax:</label>
+        <input id="itemTax" [(ngModel)]="supply.itemTax" class="form-control" type="text" formControlName="itemTax">
+        </div>
+
+        <!--Item Total Cost-->
+        <div class="submit-form padding-right">
+        <label><br>Item Total Cost:</label>
+        <input id="itemTotalCost" [(ngModel)]="supply.itemTotalCost" class="form-control" type="text" formControlName="itemTotalCost">
+        </div>
+
+        <br><br>
+
+
+<!--Row 2-->
+
+        <!--Notes Input-->
+        <label for="notes">Notes:</label>
+        <textarea rows="5" cols="40" class="form-control notes-width" id="notes" [(ngModel)]="supply.notes"
+        name="notes" formControlName="notes"></textarea>
+
+<br>
+
+<!--Submit New Supply Button-->
+
+      <button [disabled]="!addSupplyForm.valid" mat-raised-button type="submit" (click)="saveSupply()" class="theme-button">Submit New Supply</button>
+      <br><br>
+      <p><i>** All fields except notes are required. Add a zero value for entries that do not apply. Button will turn green once all requirements are met.</i></p>
+      </div>
+
+    <div *ngIf="submitted">
+      <h4>You submitted successfully!</h4>
+      <button class="theme-button"  mat-raised-button (click)="newSupply()">Add</button>
+    </div>
+  </div>
+</div>
