@@ -75,3 +75,9 @@ padding-right: 300px;
 .refresh {
   text-align: end;
 }
+
+.itemTotal {
+  text-align: end;
+  font-size: small;
+  font-weight: bold;
+}

@@ -3,7 +3,7 @@
 ; Title: supplies-list.component.ts
 ; Author: Chris Gorham
 ; Date Created: 27 July 2023
-; Last Updated: 02 August 2023
+; Last Updated: 12 August 2023
 ; Description: This code supports functionality for the Supplies List Component
 ; Sources Used:
 ; Angular Forms Overview https://angular.io/guide/forms-overview
@@ -38,15 +38,18 @@ export class SuppliesListComponent implements OnInit {
   // sets the add supply form to hidden at the start
   addASupplyCollapsed = true;
 
-  // Add a Sale collapsible functions
+  // Add a Sale collapsible functions; add in a retrieveSupplies so that the list updates when the collapse buttons are clicked
   addASupplyToggle() {
     this.addASupplyCollapsed = !this.addASupplyCollapsed;
+    this.retrieveSupplies();
   }
   addASupplyExpand() {
     this.addASupplyCollapsed = false;
+    this.retrieveSupplies();
   }
   addASupplyCollapse() {
     this.addASupplyCollapsed = true;
+    this.retrieveSupplies();
   }
 
   // defines variables needed for various functions
