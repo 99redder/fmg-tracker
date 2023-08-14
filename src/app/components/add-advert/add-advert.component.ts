@@ -3,7 +3,7 @@
 ; Title: add-advert.component.ts
 ; Author: Chris Gorham
 ; Date Created: 05 August 2023
-; Last Updated: 13 August 2023
+; Last Updated: 14 August 2023
 ; Description: This code supports functionality for the Add Advert Component
 ; Sources Used:
 ; Angular Forms Overview https://angular.io/guide/forms-overview
@@ -49,7 +49,7 @@ export class AddAdvertComponent implements OnInit {
       advertDescription: ['', Validators.compose([Validators.required])],
       dateCharged: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9-]*$')])],
       amtCharged: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9.]*$')])],
-      notes: ['', Validators.compose([Validators.pattern('^[A-Za-z0-9.,:]*$')])]
+      notes: ['', Validators.compose([Validators.pattern('^[A-Za-z0-9.,-:;()$ ]*$')])]
     })
   }
 
