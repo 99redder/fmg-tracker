@@ -3,7 +3,7 @@
 ; Title: add-sale.component.ts
 ; Author: Chris Gorham
 ; Date Created: 12 July 2023
-; Last Updated: 04 August 2023
+; Last Updated: 14 August 2023
 ; Description: This code supports functionality for the Add Sale Component
 ; Sources Used:
 ; Angular Forms Overview https://angular.io/guide/forms-overview
@@ -105,7 +105,7 @@ export class AddSaleComponent implements OnInit {
       shippingCost: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9.]*$')])],
       oldMaterialOffset: ['', Validators.compose([Validators.required,Validators.pattern('^[0-9.]*$')])],
       customBoxCost: ['', Validators.compose([Validators.required,Validators.pattern('^[0-9.]*$')])],
-      notes: ['', Validators.compose([Validators.pattern('^[A-Za-z0-9.,: ]*$')])]
+      notes: ['', Validators.compose([Validators.pattern('^[A-Za-z0-9.,-:;()$ ]*$')])]
     })
   }
 

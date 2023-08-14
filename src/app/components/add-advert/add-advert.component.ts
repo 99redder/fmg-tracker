@@ -3,7 +3,7 @@
 ; Title: add-advert.component.ts
 ; Author: Chris Gorham
 ; Date Created: 05 August 2023
-; Last Updated: 05 August 2023
+; Last Updated: 13 August 2023
 ; Description: This code supports functionality for the Add Advert Component
 ; Sources Used:
 ; Angular Forms Overview https://angular.io/guide/forms-overview
@@ -13,8 +13,10 @@
 */
 
 // imports
+import { AddAdvertDialogComponent } from '../add-advert-dialog/add-advert-dialog.component';
 import { AdvertService } from 'src/app/services/advert.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -39,7 +41,7 @@ export class AddAdvertComponent implements OnInit {
   errorMessage: string;
   addAdvertForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private advertService: AdvertService) { }
+  constructor(private matDialog: MatDialog, private fb: FormBuilder, private advertService: AdvertService) { }
 
   ngOnInit(): void {
     // Add Advert form validators and pattern checks
@@ -66,7 +68,12 @@ export class AddAdvertComponent implements OnInit {
     .subscribe(
       response => {
         console.log(response);
+        // submitted = true then false to let the add sale form show then this.newSale() to clear the form data and this.ngOnInit() to clear the validators (they would all be showing an error immediately if you don't do this)
         this.submitted = true;
+        this.openAddAdvertDialog();
+        this.submitted = false;
+        this.newAdvert();
+        this.ngOnInit();
       },
       error => {
         console.log(error);
@@ -83,5 +90,12 @@ newAdvert(): void {
     published: false
   };
 }
+
+  // function that opens the Add an Advert dialog
+  openAddAdvertDialog() {
+    const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = true;
+      this.matDialog.open(AddAdvertDialogComponent, dialogConfig);
+    }
 
 }

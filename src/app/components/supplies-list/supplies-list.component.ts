@@ -38,18 +38,18 @@ export class SuppliesListComponent implements OnInit {
   // sets the add supply form to hidden at the start
   addASupplyCollapsed = true;
 
-  // Add a Sale collapsible functions; add in a retrieveSupplies so that the list updates when the collapse buttons are clicked
+  // Add a Sale collapsible functions; add in a refreshList() so that the list updates when the collapse buttons are clicked
   addASupplyToggle() {
     this.addASupplyCollapsed = !this.addASupplyCollapsed;
-    this.retrieveSupplies();
+    this.refreshList();
   }
   addASupplyExpand() {
     this.addASupplyCollapsed = false;
-    this.retrieveSupplies();
+    this.refreshList();
   }
   addASupplyCollapse() {
     this.addASupplyCollapsed = true;
-    this.retrieveSupplies();
+    this.refreshList();
   }
 
   // defines variables needed for various functions

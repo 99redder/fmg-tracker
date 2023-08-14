@@ -3,7 +3,7 @@
 ; Title: add-supply.component.ts
 ; Author: Chris Gorham
 ; Date Created: 27 July 2023
-; Last Updated: 12 August July 2023
+; Last Updated: 13 August July 2023
 ; Description: This code supports functionality for the Add Supply Component
 ; Sources Used:
 ; Angular Forms Overview https://angular.io/guide/forms-overview
@@ -13,8 +13,10 @@
 */
 
 // imports
+import { AddSupplyDialogComponent } from '../add-supply-dialog/add-supply-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { SupplyService } from 'src/app/services/supply.service';
 
 
@@ -41,7 +43,7 @@ export class AddSupplyComponent implements OnInit {
   errorMessage: string;
   addSupplyForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private supplyService: SupplyService) { }
+  constructor(private matDialog: MatDialog, private fb: FormBuilder, private supplyService: SupplyService) { }
 
   ngOnInit(): void {
     // Add Supply form validators and pattern checks
@@ -72,7 +74,12 @@ export class AddSupplyComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
+          // submitted = true then false to let the add sale form show then this.newSale() to clear the form data and this.ngOnInit() to clear the validators (they would all be showing an error immediately if you don't do this)
           this.submitted = true;
+          this.openAddSupplyDialog();
+          this.submitted = false;
+          this.newSupply();
+          this.ngOnInit();
         },
         error => {
           console.log(error);
@@ -91,4 +98,11 @@ export class AddSupplyComponent implements OnInit {
       published: false
     };
   }
+
+    // function that opens the Add A Sale dialog
+    openAddSupplyDialog() {
+      const dialogConfig = new MatDialogConfig();
+        dialogConfig.disableClose = true;
+        this.matDialog.open(AddSupplyDialogComponent, dialogConfig);
+      }
 }

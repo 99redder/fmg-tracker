@@ -3,13 +3,19 @@
 ; Title: app.module.ts
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 04 August 2023
+; Last Updated: 13 August 2023
 ; Description: This code supports app module functionality
 ; Sources Used: N/A
 ;=====================================
 */
 
 // imports
+import { AddAdvertComponent } from './components/add-advert/add-advert.component';
+import { AddAdvertDialogComponent } from './components/add-advert-dialog/add-advert-dialog.component';
+import { AddSupplyDialogComponent } from './components/add-supply-dialog/add-supply-dialog.component';
+import { AdvertDetailsComponent } from './components/advert-details/advert-details.component';
+import { AdvertListComponent } from './components/advert-list/advert-list.component';
+
 import { AddSaleComponent } from './components/add-sale/add-sale.component';
 import { AddSaleDialogComponent } from './components/add-sale-dialog/add-sale-dialog.component';
 import { AddSupplyComponent } from './components/add-supply/add-supply.component';
@@ -41,9 +47,7 @@ import { StatsComponent } from './components/stats/stats.component';
 import { SuppliesListComponent } from './components/supplies-list/supplies-list.component';
 import { SupplyDetailsComponent } from './components/supply-details/supply-details.component';
 import { TaxesComponent } from './components/taxes/taxes.component';
-import { AddAdvertComponent } from './components/add-advert/add-advert.component';
-import { AdvertDetailsComponent } from './components/advert-details/advert-details.component';
-import { AdvertListComponent } from './components/advert-list/advert-list.component';
+
 
 
 
@@ -69,6 +73,8 @@ import { AdvertListComponent } from './components/advert-list/advert-list.compon
     AddAdvertComponent,
     AdvertDetailsComponent,
     AdvertListComponent,
+    AddSupplyDialogComponent,
+    AddAdvertDialogComponent,
   ],
   imports: [
     BrowserModule,

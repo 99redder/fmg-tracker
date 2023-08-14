@@ -4,7 +4,7 @@
 ; Title: advert-list.component.ts
 ; Author: Chris Gorham
 ; Date Created: 05 August 2023
-; Last Updated: 05 August 2023
+; Last Updated: 13 August 2023
 ; Description: This code supports functionality for the Advert List Component
 ; Sources Used:
 ; Angular Forms Overview https://angular.io/guide/forms-overview
@@ -40,15 +40,18 @@ export class AdvertListComponent implements OnInit {
     // sets the add supply form to hidden at the start
     addAdvertCollapsed = true;
 
-    // Add an Advert collapsible functions
+    // Add an Advert collapsible functions; refreshList() added to update the list when the toggle is clicked
     addAdvertToggle() {
       this.addAdvertCollapsed = !this.addAdvertCollapsed;
+      this.refreshList();
     }
     addAdvertExpand() {
       this.addAdvertCollapsed = false;
+      this.refreshList();
     }
     addAdvertCollapse() {
       this.addAdvertCollapsed = true;
+      this.refreshList();
     }
 
     // defines variables needed for various functions
