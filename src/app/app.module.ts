@@ -3,7 +3,7 @@
 ; Title: app.module.ts
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 13 August 2023
+; Last Updated: 14 August 2023
 ; Description: This code supports app module functionality
 ; Sources Used: N/A
 ;=====================================
