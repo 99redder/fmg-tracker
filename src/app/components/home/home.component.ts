@@ -11,6 +11,7 @@
 
 // imports
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { SaleService } from 'src/app/services/sale.service';
 
 @Component({
@@ -20,11 +21,9 @@ import { SaleService } from 'src/app/services/sale.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private salesService: SaleService) { }
+  constructor(private salesService: SaleService, private http: HttpClient) {}
 
-
-
-  ngOnInit(): void {}
+  ngOnInit() {}
 
 
 }
