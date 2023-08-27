@@ -10,6 +10,7 @@
 */
 
 // imports
+import { ApiService } from 'src/app/services/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -18,9 +19,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  totalSales2023: number | undefined;
+  totalShipping2023: number | undefined;
 
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
-  ngOnInit() {}
-
+  ngOnInit(): void {
+    this.apiService.getMultipleQueries().subscribe(
+      (data) => {
+        this.totalSales2023 = data.totalSales2023;
+        this.totalShipping2023 = data.totalShipping2023;
+        console.log(this.totalSales2023, this.totalShipping2023)
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
 }
