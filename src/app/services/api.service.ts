@@ -24,7 +24,21 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getMultipleQueries(): Observable<{ totalSales2023: number; totalShipping2023: number}> {
-    return this.http.get<{ totalSales2023: number; totalShipping2023: number }>(`${this.baseUrl}/multipleQueries`);
+  getMultipleQueries(): Observable<{
+    totalSales2023: number;
+    totalShipping2023: number;
+    totalEtsyFees2023: number;
+    totalSalesCount2023: object;
+    suppliesTotal2023: number;
+    advertsTotal2023: number;
+     }> {
+    return this.http.get<{
+      totalSales2023: number;
+      totalShipping2023: number;
+      totalEtsyFees2023: number;
+      totalSalesCount2023: object;
+      suppliesTotal2023: number;
+      advertsTotal2023: number;
+    }>(`${this.baseUrl}/multipleQueries`);
   }
 }

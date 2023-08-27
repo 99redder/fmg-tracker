@@ -3,7 +3,7 @@
 ; Title: app.module.ts
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 14 August 2023
+; Last Updated: 27 August 2023
 ; Description: This code supports app module functionality
 ; Sources Used: N/A
 ;=====================================
@@ -43,10 +43,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { SaleDetailsComponent } from './components/sale-details/sale-details.component';
 import { SalesListComponent } from './components/sales-list/sales-list.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
-import { StatsComponent } from './components/stats/stats.component';
 import { SuppliesListComponent } from './components/supplies-list/supplies-list.component';
 import { SupplyDetailsComponent } from './components/supply-details/supply-details.component';
-import { TaxesComponent } from './components/taxes/taxes.component';
 
 
 
@@ -60,10 +58,8 @@ import { TaxesComponent } from './components/taxes/taxes.component';
     SaleDetailsComponent,
     SalesListComponent,
     HomeComponent,
-    TaxesComponent,
     BaseLayoutComponent,
     AuthLayoutComponent,
-    StatsComponent,
     SignInComponent,
     SupplyDetailsComponent,
     AddSupplyComponent,

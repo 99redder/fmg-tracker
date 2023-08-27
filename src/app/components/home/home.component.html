@@ -9,43 +9,94 @@
 =====================================
 -->
 
-<mat-card class="bg-white">
+<mat-card class="bg-white mat-elevation-z0">
   <mat-card-content>
     <div fxLayout="row wrap">
       <!--User Inputs-->
-      <div fxFlex>
-        <mat-card class="mat-elevation-z0 bg-white">
+      <div fxFlex="33" class="padding-right">
+        <mat-card class="mat-elevation-z1 bg-white padding-right">
 
           <mat-card-title></mat-card-title>
 
           <mat-card-content>
-          <p class="quick-stats">
-          <u><b>2023 Quick Stats</b></u><br><br>
-            Total Sales: &nbsp;${{ totalSales2023 }}<br><br>
-            Total Etsy Fees:<br><br>
-            Total Shipping Costs: ${{ totalShipping2023 }}<br><br>
-            Total Supply Costs: <br><br>
-            Total Material Costs:<br><br>
-            Profit:<br><br>
+          <div class="quick-stats">
+          <u><b>2023 Stats</b></u><br><br>
+            <table class="home-table">
+              <TR>
+                <TD class="left td-padding">Total Number of Sales:</TD>
+                <TD class="right td-padding">{{ totalSalesCount2023['COUNT(*)'] || 'N/A' }}</TD>
+              </TR>
+              <TR>
+                <TD class="bg-black font-white"><b>Total Sales Volume:</b></TD>
+                <TD class="bg-black font-white"><b>${{ totalSales2023 | number:'1.2-2' }}</b></TD>
+              </TR>
+              <br><br>
+              <TR>
+                <TD>Total Etsy Fees:</TD>
+                <TD>${{ totalEtsyFees2023 | number:'1.2-2' }}</TD>
+              </TR>
+              <TR>
+                <TD>Total Shipping Costs:</TD>
+                <TD>${{ totalShipping2023 | number:'1.2-2' }}</TD>
+              </TR>
+              <TR>
+                <TD>Total Supplies Costs:</TD>
+                <TD>${{ suppliesTotal2023 | number:'1.2-2' }}</TD>
+              </TR>
+              <TR>
+                <TD>Total Advertising Costs:</TD>
+                <TD>${{ advertsTotal2023 | number:'1.2-2' }}</TD>
+              </TR>
+              <TR>
+                <TD class="bg-black font-white"><b>Total Fees and Costs:</b></TD>
+                <TD class="bg-black font-white"><b>{{ '$' + (totalFeesAndCosts2023 | number:'1.2-2') }}</b></TD>
+              </TR>
+              <br><br>
+              <TR>
+                <TD class="bg-light-green font-black"><b>Profit:</b></TD>
+                <TD class="bg-light-green font-black"><b>{{ '$' + (profit2023 | number:'1.2-2') }}</b></TD>
+              </TR>
+            </table>
 
-          </p>
+
+          </div>
 
           </mat-card-content>
         </mat-card>
       </div>
 
-
-      <div fxFlex class="bg-white">
-        <mat-card class="bg-white mat-elevation-z0">
-          <mat-card-title class="font-white center"></mat-card-title><br><br>
-          <mat-card-content class="center"><br><br>
+      <!--Second Column-->
+      <div fxFlex="33"class="padding-right">
+        <mat-card class="bg-white mat-elevation-z1">
+          <mat-card-title></mat-card-title>
+          <mat-card-content>
+            <p class="quick-stats">
+              <u><b>2023 Item Stats</b></u>
+            </p><br><br>
 
 
           </mat-card-content>
 
         </mat-card>
       </div>
-    </div>
+
+      <!--Third Column-->
+      <div fxFlex="33"class="padding-right">
+        <mat-card class="bg-white mat-elevation-z1">
+          <mat-card-title></mat-card-title>
+          <mat-card-content>
+            <p class="quick-stats">
+              <u><b>All Time Stats</b></u>
+            </p><br><br>
+
+          </mat-card-content>
+
+        </mat-card>
+      </div>
+
+
+
+  </div>
 
   </mat-card-content>
 </mat-card>

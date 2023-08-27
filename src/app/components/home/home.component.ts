@@ -3,7 +3,7 @@
 ; Title: home.component.ts
 ; Author: Chris Gorham
 ; Date Created: 21 July 2023
-; Last Updated: 24 August 2023
+; Last Updated: 27 August 2023
 ; Description: This code supports functionality for the Home Component
 ; Sources Used: N/A
 ;=====================================
@@ -21,6 +21,12 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   totalSales2023: number | undefined;
   totalShipping2023: number | undefined;
+  totalEtsyFees2023: number | undefined;
+  totalSalesCount2023: object | undefined;
+  suppliesTotal2023: number | undefined;
+  advertsTotal2023: number | undefined;
+  totalFeesAndCosts2023: number;
+  profit2023: number;
 
   constructor(private apiService: ApiService) {}
 
@@ -29,7 +35,15 @@ export class HomeComponent implements OnInit {
       (data) => {
         this.totalSales2023 = data.totalSales2023;
         this.totalShipping2023 = data.totalShipping2023;
-        console.log(this.totalSales2023, this.totalShipping2023)
+        this.totalEtsyFees2023 = data.totalEtsyFees2023;
+        this.totalSalesCount2023 = data.totalSalesCount2023;
+        this.suppliesTotal2023 = data.suppliesTotal2023;
+        this.advertsTotal2023 = data.advertsTotal2023;
+
+        // calculates total fees and costs
+        this.totalFeesAndCosts2023 = Number(this.suppliesTotal2023) + Number(this.totalEtsyFees2023) + Number(this.totalShipping2023) + Number(this.advertsTotal2023);
+        // calculates profit
+        this.profit2023 = this.totalSales2023 - Number(this.totalFeesAndCosts2023);
       },
       (error) => {
         console.error(error);
