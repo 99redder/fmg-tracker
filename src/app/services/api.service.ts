@@ -25,20 +25,40 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getMultipleQueries(): Observable<{
+    // 2023
     totalSales2023: number;
     totalShipping2023: number;
     totalEtsyFees2023: number;
     totalSalesCount2023: object;
     suppliesTotal2023: number;
     advertsTotal2023: number;
+    // all-time
+    totalSales: number;
+    totalShipping: number;
+    totalEtsyFees: number;
+    totalSalesCount: object;
+    suppliesTotal: number;
+    advertsTotal: number;
+    // item stats
+    gohanCount: object;
      }> {
     return this.http.get<{
+      // 2023
       totalSales2023: number;
       totalShipping2023: number;
       totalEtsyFees2023: number;
       totalSalesCount2023: object;
       suppliesTotal2023: number;
       advertsTotal2023: number;
+      // all-time
+      totalSales: number;
+      totalShipping: number;
+      totalEtsyFees: number;
+      totalSalesCount: object;
+      suppliesTotal: number;
+      advertsTotal: number;
+      // item stats
+      gohanCount: object;
     }>(`${this.baseUrl}/multipleQueries`);
   }
 }

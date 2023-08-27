@@ -70,9 +70,16 @@
         <mat-card class="bg-white mat-elevation-z1">
           <mat-card-title></mat-card-title>
           <mat-card-content>
-            <p class="quick-stats">
-              <u><b>2023 Item Stats</b></u>
-            </p><br><br>
+            <div class="quick-stats">
+              <u><b>Item Stats</b></u><br><br>
+              <table class="home-table">
+                <TR>
+                  <TD>Total Gohan Hats Sold:</TD>
+                  <TD>{{ gohanCount['COUNT(*)'] }}</TD>
+                </TR>
+              </table>
+
+            </div><br><br>
 
 
           </mat-card-content>
@@ -85,9 +92,45 @@
         <mat-card class="bg-white mat-elevation-z1">
           <mat-card-title></mat-card-title>
           <mat-card-content>
-            <p class="quick-stats">
-              <u><b>All Time Stats</b></u>
-            </p><br><br>
+            <div class="quick-stats">
+              <u><b>All Time Stats</b></u><br><br>
+              <table class="home-table">
+                <TR>
+                  <TD class="left td-padding">Total Number of Sales:</TD>
+                  <TD class="right td-padding">{{ totalSalesCount['COUNT(*)'] || 'N/A' }}</TD>
+                </TR>
+                <TR>
+                  <TD class="bg-black font-white"><b>Total Sales Volume:</b></TD>
+                  <TD class="bg-black font-white"><b>${{ totalSales | number:'1.2-2' }}</b></TD>
+                </TR>
+                <br><br>
+                <TR>
+                  <TD>Total Etsy Fees:</TD>
+                  <TD>${{ totalEtsyFees | number:'1.2-2' }}</TD>
+                </TR>
+                <TR>
+                  <TD>Total Shipping Costs:</TD>
+                  <TD>${{ totalShipping | number:'1.2-2' }}</TD>
+                </TR>
+                <TR>
+                  <TD>Total Supplies Costs:</TD>
+                  <TD>${{ suppliesTotal | number:'1.2-2' }}</TD>
+                </TR>
+                <TR>
+                  <TD>Total Advertising Costs:</TD>
+                  <TD>${{ advertsTotal | number:'1.2-2' }}</TD>
+                </TR>
+                <TR>
+                  <TD class="bg-black font-white"><b>Total Fees and Costs:</b></TD>
+                  <TD class="bg-black font-white"><b>{{ '$' + (totalFeesAndCosts | number:'1.2-2') }}</b></TD>
+                </TR>
+                <br><br>
+                <TR>
+                  <TD class="bg-light-green font-black"><b>Profit:</b></TD>
+                  <TD class="bg-light-green font-black"><b>{{ '$' + (profit | number:'1.2-2') }}</b></TD>
+                </TR>
+              </table>
+            </div>
 
           </mat-card-content>
 
