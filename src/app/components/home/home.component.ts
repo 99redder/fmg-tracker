@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
   profit: number;
   // variables for item stats
   gohanCount: object | undefined;
+  patternCount: object | undefined;
 
   constructor(private apiService: ApiService) {}
 
@@ -61,6 +62,7 @@ export class HomeComponent implements OnInit {
         this.advertsTotal = data.advertsTotal;
         // item stats
         this.gohanCount = data.gohanCount;
+        this.patternCount = data.patternCount;
         // calculates total fees and costs for 2023
         this.totalFeesAndCosts2023 = Number(this.suppliesTotal2023) + Number(this.totalEtsyFees2023) + Number(this.totalShipping2023) + Number(this.advertsTotal2023);
         // calculates profit for 2023

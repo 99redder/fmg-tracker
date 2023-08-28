@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 26 August 2023
+; Last Updated: 27 August 2023
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -41,6 +41,7 @@ export class ApiService {
     advertsTotal: number;
     // item stats
     gohanCount: object;
+    patternCount: object;
      }> {
     return this.http.get<{
       // 2023
@@ -59,6 +60,7 @@ export class ApiService {
       advertsTotal: number;
       // item stats
       gohanCount: object;
+      patternCount: object;
     }>(`${this.baseUrl}/multipleQueries`);
   }
 }
