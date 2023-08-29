@@ -85,6 +85,12 @@ export class AdvertDetailsComponent implements OnInit {
 
   // deletes a advert
   deleteAdvert(): void {
+
+    // dialog box that asks for confirmation before proceeding to the actual deletion
+    if (!confirm('Are you sure you want to delete this Advert?')) {
+      return
+    }
+
     this.advertService.delete(this.currentAdvert.id)
       .subscribe(
         response => {

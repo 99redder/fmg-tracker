@@ -113,6 +113,11 @@ export class SaleDetailsComponent implements OnInit {
   }
 
   deleteSale(): void {
+
+    // dialog box that asks for confirmation before proceeding to the actual deletion
+    if (!confirm('Are you sure you want to delete this Sale?')) {
+      return
+    }
     this.saleService.delete(this.currentSale.id)
       .subscribe(
         response => {

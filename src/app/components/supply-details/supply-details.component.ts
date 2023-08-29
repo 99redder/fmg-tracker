@@ -84,6 +84,12 @@ export class SupplyDetailsComponent implements OnInit {
 
   // deletes a supply
   deleteSupply(): void {
+
+    // dialog box that asks for confirmation before proceeding to the actual deletion
+    if (!confirm('Are you sure you want to delete this Supply?')) {
+      return
+    }
+
     this.supplyService.delete(this.currentSupply.id)
       .subscribe(
         response => {
