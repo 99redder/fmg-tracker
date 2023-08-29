@@ -82,7 +82,7 @@ export class SupplyDetailsComponent implements OnInit {
         });
   }
 
-  // deletes a supply
+  // function that deletes a supply
   deleteSupply(): void {
 
     // dialog box that asks for confirmation before proceeding to the actual deletion
