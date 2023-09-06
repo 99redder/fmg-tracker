@@ -13,8 +13,8 @@
 */
 
 // imports
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { SupplyService } from 'src/app/services/supply.service';
 
 @Component({

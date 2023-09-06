@@ -3,7 +3,7 @@
 ; Title: description.class.ts
 ; Author: Chris Gorham
 ; Date Created: 03 August 2023
-; Last Updated: 03 August 2023
+; Last Updated: 05 September 2023
 ; Description: This code supports functionality for the Item Descriptions
 ; Sources Used: N/A
 ;=====================================
@@ -42,6 +42,12 @@ export class Description {
       {description: "Goku Baby Hat (3-6 months)"},
       {description: "Goku Baby Hat (6-9 months)"},
       {description: "Goku Onesie and Hat"},
+      {description: "Luffy Baby Straw Hat (0-3 months)"},
+      {description: "Luffy Baby Straw Hat (3-6 months)"},
+      {description: "Luffy Baby Straw Hat (6-9 months)"},
+      {description: "Luffy Baby Straw Hat (9-12 months)"},
+      {description: "Luffy Baby Straw Hat (12-18 months)"},
+      {description: "Luffy Baby Straw Hat (18-24 months)"},
       {description: "Majin Buu Diaper Set (0-3 months)"},
       {description: "Majin Buu Diaper Set (3-6 months)"},
       {description: "Majin Buu Diaper Set (6-9 months)"},
