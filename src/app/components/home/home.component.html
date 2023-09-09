@@ -3,7 +3,7 @@
 ; Title: home.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 31 July 2023
+; Last Updated: 08 September 2023
 ; Description: This code supports functionality for the home page and home component
 ; Sources Used: N/A
 =====================================
@@ -14,7 +14,7 @@
     <div fxLayout="row wrap">
       <!--User Inputs-->
       <div fxFlex="33" class="padding-right">
-        <mat-card class="mat-elevation-z1 bg-white padding-right">
+        <mat-card class="mat-elevation-z1 bg-light-green padding-right">
 
           <mat-card-title></mat-card-title>
 
@@ -53,8 +53,8 @@
               </TR>
               <br><br>
               <TR>
-                <TD class="bg-light-green font-black"><b>Profit:</b></TD>
-                <TD class="bg-light-green font-black"><b>{{ '$' + (profit2023 | number:'1.2-2') }}</b></TD>
+                <TD class="bg-black font-white"><b>Profit:</b></TD>
+                <TD class="bg-black font-white"><b>{{ '$' + (profit2023 | number:'1.2-2') }}</b></TD>
               </TR>
             </table>
 
@@ -67,19 +67,79 @@
 
       <!--Second Column-->
       <div fxFlex="33"class="padding-right">
-        <mat-card class="bg-white mat-elevation-z1">
+        <mat-card class="bg-light-green mat-elevation-z1">
           <mat-card-title></mat-card-title>
           <mat-card-content>
             <div class="quick-stats">
               <u><b>Item Stats</b></u><br><br>
               <table class="home-table">
                 <TR>
-                  <TD>Total Gohan Hats Sold:</TD>
-                  <TD>{{ gohanCount['COUNT(*)'] }}</TD>
+                  <TD class="bg-black font-white">Total Gohan Hats Sold:</TD>
+                  <TD class="bg-black font-white">{{ gohanCount['COUNT(*)'] }}</TD>
                 </TR>
                 <TR>
-                  <TD>Total Gohan Hat Patterns Sold:</TD>
-                  <TD>{{ patternCount['COUNT(*)'] }}</TD>
+                  <TD>0-3 months:</TD>
+                  <TD>{{ gohan03Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>3-6 months:</TD>
+                  <TD>{{ gohan36Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>6-9 months:</TD>
+                  <TD>{{ gohan69Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>9-12 months:</TD>
+                  <TD>{{ gohan912Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>12-18 months:</TD>
+                  <TD>{{ gohan1218Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>18-24 months:</TD>
+                  <TD>{{ gohan1824Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD class="bg-black font-white">Total Trunks Diaper Sets Sold:</TD>
+                  <TD class="bg-black font-white">{{ trunksCount['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>0-3 months:</TD>
+                  <TD>{{ trunks03Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>3-6 months:</TD>
+                  <TD>{{ trunks36Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>6-9 months:</TD>
+                  <TD>{{ trunks69Count['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD class="bg-black font-white">Total Majin Buu Diaper Sets Sold:</TD>
+                  <TD class="bg-black font-white">{{ majinCount['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD>0-3 months:</TD>
+                  <TD>{{ majin03Count['COUNT(*)'] }}</TD>
+                </TR>
+              <TR>
+                <TD>3-6 months:</TD>
+                <TD>{{ majin36Count['COUNT(*)'] }}</TD>
+              </TR>
+              <TR>
+                <TD>6-9 months:</TD>
+                <TD>{{ majin69Count['COUNT(*)'] }}</TD>
+              </TR>
+                <TR>
+                  <TD class="bg-black font-white">Total Goku Baby Hats Sold:</TD>
+                  <TD class="bg-black font-white">{{ gokuHatCount['COUNT(*)'] }}</TD>
+                </TR>
+                <TR>
+                  <TD class="bg-black font-white">Total Gohan Hat Patterns Sold:</TD>
+                  <TD class="bg-black font-white">{{ patternCount['COUNT(*)'] }}</TD>
                 </TR>
               </table>
 
@@ -93,7 +153,7 @@
 
       <!--Third Column-->
       <div fxFlex="33"class="padding-right">
-        <mat-card class="bg-lighter-grey mat-elevation-z1">
+        <mat-card class="bg-light-green mat-elevation-z1">
           <mat-card-title></mat-card-title>
           <mat-card-content>
             <div class="quick-stats">
@@ -130,8 +190,8 @@
                 </TR>
                 <br><br>
                 <TR>
-                  <TD class="bg-light-green font-black"><b>Profit:</b></TD>
-                  <TD class="bg-light-green font-black"><b>{{ '$' + (profit | number:'1.2-2') }}</b></TD>
+                  <TD class="bg-black font-white"><b>Profit:</b></TD>
+                  <TD class="bg-black font-white"><b>{{ '$' + (profit | number:'1.2-2') }}</b></TD>
                 </TR>
               </table>
             </div>
