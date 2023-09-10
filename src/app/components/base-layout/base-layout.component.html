@@ -3,7 +3,7 @@
 ; Title: base-layout.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 08 September 2023
+; Last Updated: 10 September 2023
 ; Description: This code sets up the nav bar and base layout
 ; Sources Used: N/A
 =====================================
@@ -21,7 +21,6 @@
         <button mat-button routerLink="/sales">Sales</button>
         <button mat-button routerLink="/supplies">Supplies</button>
         <button mat-button routerLink="/advertising">Advertising</button>
-        <button mat-button routerLink="/contact">Contact</button>
         <button mat-button (click)="signOut()">Sign Out</button>
         <!--nav bar buttons end-->
       </div>
@@ -40,6 +39,12 @@
         <router-outlet></router-outlet>
       </mat-card-content>
     </mat-card>
+
+    <!--BR creates a space between the Home Card and the footer-->
+    <br>
+
   </div>
 </div>
 
+
+<app-footer></app-footer>
