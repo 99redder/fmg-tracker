@@ -1,0 +1,29 @@
+<!--
+======================================
+; Title: nav.component.html
+; Author: Chris Gorham
+; Date Created: 10 September 2023
+; Last Updated: 10 September 2023
+; Description: This code is for the Nav Component
+; Sources Used: N/A
+=====================================
+-->
+
+<mat-toolbar class="bg-black">
+  <mat-toolbar-row>
+    <div class="logo">
+      <img routerLink="/" src="./assets/logo.png" height="40" class="padding-right pointer">
+    </div>
+    <div style="width: 80%">
+      <div fxLayout="row wrap" fxLayoutAlign="end start" class="font-white">
+        <!--nav bar buttons start-->
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="/sales">Sales</button>
+        <button mat-button routerLink="/supplies">Supplies</button>
+        <button mat-button routerLink="/advertising">Advertising</button>
+        <button mat-button (click)="signOut()">Sign Out</button>
+        <!--nav bar buttons end-->
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

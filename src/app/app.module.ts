@@ -46,6 +46,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SuppliesListComponent } from './components/supplies-list/supplies-list.component';
 import { SupplyDetailsComponent } from './components/supply-details/supply-details.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { NavComponent } from './components/nav/nav.component';
 
 
 
@@ -73,6 +74,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AddSupplyDialogComponent,
     AddAdvertDialogComponent,
     FooterComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,

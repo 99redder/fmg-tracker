@@ -5,10 +5,14 @@
 ; Date Created: 10 September 2023
 ; Last Updated: 10 September 2023
 ; Description: This code supports styling for the Footer Component
-; Sources Used: N/A
+; Sources Used:
+; How To Create Footer To Stay At The Bottom Of A Web Page? https://www.geeksforgeeks.org/how-to-create-footer-to-stay-at-the-bottom-of-a-web-page/#
 ;=====================================
 */
 
 .footer {
-  min-height: 150px;
+  min-height: 30px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
