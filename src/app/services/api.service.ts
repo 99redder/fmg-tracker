@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 08 September 2023
+; Last Updated: 14 September 2023
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -57,6 +57,16 @@ export class ApiService {
     majin36Count: object;
     majin69Count: object;
     gokuHatCount: object;
+    gokuHat03Count: object;
+    gokuHat36Count: object;
+    gokuHat69Count: object;
+    luffyCount: object;
+    luffy03Count: object;
+    luffy36Count: object;
+    luffy69Count: object;
+    luffy912Count: object;
+    luffy1218Count: object;
+    luffy1824Count: object;
      }> {
     return this.http.get<{
       // 2023
@@ -91,6 +101,16 @@ export class ApiService {
       majin36Count: object;
       majin69Count: object;
       gokuHatCount: object;
+      gokuHat03Count: object;
+      gokuHat36Count: object;
+      gokuHat69Count: object;
+      luffyCount: object;
+      luffy03Count: object;
+      luffy36Count: object;
+      luffy69Count: object;
+      luffy912Count: object;
+      luffy1218Count: object;
+      luffy1824Count: object;
     }>(`${this.baseUrl}/multipleQueries`);
   }
 }

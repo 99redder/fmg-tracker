@@ -3,7 +3,7 @@
 ; Title: home.component.ts
 ; Author: Chris Gorham
 ; Date Created: 21 July 2023
-; Last Updated: 08 September 2023
+; Last Updated: 14 September 2023
 ; Description: This code supports functionality for the Home Component
 ; Sources Used: N/A
 ;=====================================
@@ -47,6 +47,9 @@ export class HomeComponent implements OnInit {
   gohan1824Count: object | undefined;
   patternCount: object | undefined;
   gokuHatCount: object | undefined;
+  gokuHat03Count: object | undefined;
+  gokuHat36Count: object | undefined;
+  gokuHat69Count: object | undefined;
   majinCount: object | undefined;
   majin03Count: object | undefined;
   majin36Count: object | undefined;
@@ -55,6 +58,13 @@ export class HomeComponent implements OnInit {
   trunks03Count: object | undefined;
   trunks36Count: object | undefined;
   trunks69Count: object | undefined;
+  luffyCount: object | undefined;
+  luffy03Count: object | undefined;
+  luffy36Count: object | undefined;
+  luffy69Count: object | undefined;
+  luffy912Count: object | undefined;
+  luffy1218Count: object | undefined;
+  luffy1824Count: object | undefined;
 
   constructor(private apiService: ApiService) {}
 
@@ -85,6 +95,9 @@ export class HomeComponent implements OnInit {
         this.gohan1824Count = data.gohan1824Count;
         this.patternCount = data.patternCount;
         this.gokuHatCount = data.gokuHatCount;
+        this.gokuHat03Count = data.gokuHat03Count;
+        this.gokuHat36Count = data.gokuHat36Count;
+        this.gokuHat69Count = data.gokuHat69Count;
         this.majinCount = data.majinCount;
         this.majin03Count = data.majin03Count;
         this.majin36Count = data.majin36Count;
@@ -93,6 +106,13 @@ export class HomeComponent implements OnInit {
         this.trunks03Count = data.trunks03Count;
         this.trunks36Count = data.trunks36Count;
         this.trunks69Count = data.trunks69Count;
+        this.luffyCount = data.luffyCount;
+        this.luffy03Count = data.luffy03Count;
+        this.luffy36Count = data.luffy36Count;
+        this.luffy69Count = data.luffy69Count;
+        this.luffy912Count = data.luffy912Count;
+        this.luffy1218Count = data.luffy1218Count;
+        this.luffy1824Count = data.luffy1824Count;
         // calculates total fees and costs for 2023
         this.totalFeesAndCosts2023 = Number(this.suppliesTotal2023) + Number(this.totalEtsyFees2023) + Number(this.totalShipping2023) + Number(this.advertsTotal2023);
         // calculates profit for 2023
