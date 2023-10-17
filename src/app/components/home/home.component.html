@@ -3,7 +3,7 @@
 ; Title: home.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 14 September 2023
+; Last Updated: 06 October 2023
 ; Description: This code supports functionality for the home page and home component
 ; Sources Used: N/A
 =====================================
@@ -12,7 +12,7 @@
 <mat-card class="bg-white mat-elevation-z0">
   <mat-card-content>
     <div fxLayout="row wrap">
-      <!--User Inputs-->
+      <!--First Column-->
       <div fxFlex="33" class="padding-right">
         <mat-card class="mat-elevation-z1 bg-light-green padding-right">
 
@@ -28,33 +28,33 @@
               </TR>
               <TR>
                 <TD class="bg-black font-white"><b>Total Sales Volume:</b></TD>
-                <TD class="bg-black font-white"><b>${{ totalSales2023 | number:'1.2-2' }}</b></TD>
+                <TD class="bg-black font-white"><b>{{ totalSales2023 | currency }}</b></TD>
               </TR>
               <br><br>
               <TR>
                 <TD>Total Etsy Fees:</TD>
-                <TD>${{ totalEtsyFees2023 | number:'1.2-2' }}</TD>
+                <TD>{{ totalEtsyFees2023 | currency }}</TD>
               </TR>
               <TR>
                 <TD>Total Shipping Costs:</TD>
-                <TD>${{ totalShipping2023 | number:'1.2-2' }}</TD>
+                <TD>{{ totalShipping2023 | currency }}</TD>
               </TR>
               <TR>
                 <TD>Total Supplies Costs:</TD>
-                <TD>${{ suppliesTotal2023 | number:'1.2-2' }}</TD>
+                <TD>{{ suppliesTotal2023 | currency }}</TD>
               </TR>
               <TR>
                 <TD>Total Advertising Costs:</TD>
-                <TD>${{ advertsTotal2023 | number:'1.2-2' }}</TD>
+                <TD>{{ advertsTotal2023 | currency }}</TD>
               </TR>
               <TR>
                 <TD class="bg-black font-white"><b>Total Fees and Costs:</b></TD>
-                <TD class="bg-black font-white"><b>{{ '$' + (totalFeesAndCosts2023 | number:'1.2-2') }}</b></TD>
+                <TD class="bg-black font-white"><b>{{  totalFeesAndCosts2023 | currency }}</b></TD>
               </TR>
               <br><br>
               <TR>
                 <TD class="bg-black font-white"><b>Profit:</b></TD>
-                <TD class="bg-black font-white"><b>{{ '$' + (profit2023 | number:'1.2-2') }}</b></TD>
+                <TD class="bg-black font-white"><b>{{ profit2023 | currency }}</b></TD>
               </TR>
             </table>
 
@@ -205,33 +205,33 @@
                 </TR>
                 <TR>
                   <TD class="bg-black font-white"><b>Total Sales Volume:</b></TD>
-                  <TD class="bg-black font-white"><b>${{ totalSales | number:'1.2-2' }}</b></TD>
+                  <TD class="bg-black font-white"><b>{{ totalSales | currency }}</b></TD>
                 </TR>
                 <br><br>
                 <TR>
                   <TD>Total Etsy Fees:</TD>
-                  <TD>${{ totalEtsyFees | number:'1.2-2' }}</TD>
+                  <TD>{{ totalEtsyFees | currency }}</TD>
                 </TR>
                 <TR>
                   <TD>Total Shipping Costs:</TD>
-                  <TD>${{ totalShipping | number:'1.2-2' }}</TD>
+                  <TD>{{ totalShipping | currency }}</TD>
                 </TR>
                 <TR>
                   <TD>Total Supplies Costs:</TD>
-                  <TD>${{ suppliesTotal | number:'1.2-2' }}</TD>
+                  <TD>{{ suppliesTotal | currency }}</TD>
                 </TR>
                 <TR>
                   <TD>Total Advertising Costs:</TD>
-                  <TD>${{ advertsTotal | number:'1.2-2' }}</TD>
+                  <TD>{{ advertsTotal | currency }}</TD>
                 </TR>
                 <TR>
                   <TD class="bg-black font-white"><b>Total Fees and Costs:</b></TD>
-                  <TD class="bg-black font-white"><b>{{ '$' + (totalFeesAndCosts | number:'1.2-2') }}</b></TD>
+                  <TD class="bg-black font-white"><b>{{ totalFeesAndCosts | currency }}</b></TD>
                 </TR>
                 <br><br>
                 <TR>
                   <TD class="bg-black font-white"><b>Profit:</b></TD>
-                  <TD class="bg-black font-white"><b>{{ '$' + (profit | number:'1.2-2') }}</b></TD>
+                  <TD class="bg-black font-white"><b>{{ profit | currency }}</b></TD>
                 </TR>
               </table>
             </div>
