@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 14 September 2023
+; Last Updated: 02 December 2023
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -25,6 +25,13 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getMultipleQueries(): Observable<{
+    // 2024
+    totalSales2024: number;
+    totalShipping2024: number;
+    totalEtsyFees2024: number;
+    totalSalesCount2024: object;
+    suppliesTotal2024: number;
+    advertsTotal2024: number;
     // 2023
     totalSales2023: number;
     totalShipping2023: number;
@@ -69,6 +76,13 @@ export class ApiService {
     luffy1824Count: object;
      }> {
     return this.http.get<{
+      // 2024
+      totalSales2024: number;
+      totalShipping2024: number;
+      totalEtsyFees2024: number;
+      totalSalesCount2024: object;
+      suppliesTotal2024: number;
+      advertsTotal2024: number;
       // 2023
       totalSales2023: number;
       totalShipping2023: number;

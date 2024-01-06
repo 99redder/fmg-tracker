@@ -3,7 +3,7 @@
 ; Title: home.component.ts
 ; Author: Chris Gorham
 ; Date Created: 21 July 2023
-; Last Updated: 14 September 2023
+; Last Updated: 02 December 2023
 ; Description: This code supports functionality for the Home Component
 ; Sources Used: N/A
 ;=====================================
@@ -19,6 +19,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  // variables for 2024
+  totalSales2024: number | undefined;
+  totalShipping2024: number | undefined;
+  totalEtsyFees2024: number | undefined;
+  totalSalesCount2024: object | undefined;
+  suppliesTotal2024: number | undefined;
+  advertsTotal2024: number | undefined;
+  totalFeesAndCosts2024: number;
+  profit2024: number;
   // variables for 2023
   totalSales2023: number | undefined;
   totalShipping2023: number | undefined;
@@ -71,6 +80,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getMultipleQueries().subscribe(
       (data) => {
+        // 2024
+        this.totalSales2024 = data.totalSales2024;
+        this.totalShipping2024 = data.totalShipping2024;
+        this.totalEtsyFees2024 = data.totalEtsyFees2024;
+        this.totalSalesCount2024 = data.totalSalesCount2024;
+        this.suppliesTotal2024 = data.suppliesTotal2024;
+        this.advertsTotal2024 = data.advertsTotal2024;
         // 2023
         this.totalSales2023 = data.totalSales2023;
         this.totalShipping2023 = data.totalShipping2023;
@@ -113,6 +129,10 @@ export class HomeComponent implements OnInit {
         this.luffy912Count = data.luffy912Count;
         this.luffy1218Count = data.luffy1218Count;
         this.luffy1824Count = data.luffy1824Count;
+        // calculates total fees and costs for 2024
+        this.totalFeesAndCosts2024 = Number(this.suppliesTotal2024) + Number(this.totalEtsyFees2024) + Number(this.totalShipping2024) + Number(this.advertsTotal2024);
+        // calculates profit for 2024
+        this.profit2024 = this.totalSales2024 - Number(this.totalFeesAndCosts2024);
         // calculates total fees and costs for 2023
         this.totalFeesAndCosts2023 = Number(this.suppliesTotal2023) + Number(this.totalEtsyFees2023) + Number(this.totalShipping2023) + Number(this.advertsTotal2023);
         // calculates profit for 2023
