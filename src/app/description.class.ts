@@ -3,7 +3,7 @@
 ; Title: description.class.ts
 ; Author: Chris Gorham
 ; Date Created: 03 August 2023
-; Last Updated: 31 January 2024
+; Last Updated: 13 February 2024
 ; Description: This code supports functionality for the Item Descriptions
 ; Sources Used: N/A
 ;=====================================
@@ -61,6 +61,12 @@ export class Description {
       {description: "Shenron Shenlong Diaper Set (0-3 months)"},
       {description: "Shenron Shenlong Diaper Set (3-6 months)"},
       {description: "Shenron Shenlong Diaper Set (6-9 months)"},
+      {description: "Shenron Shenlong Hat (0-3 months)"},
+      {description: "Shenron Shenlong Hat (3-6 months)"},
+      {description: "Shenron Shenlong Hat (6-9 months)"},
+      {description: "Shenron Shenlong Hat (9-12 months)"},
+      {description: "Shenron Shenlong Hat (12-18 months)"},
+      {description: "Shenron Shenlong Hat (18-24 months)"},
       {description: "Trunks Diaper Set (0-3 months)"},
       {description: "Trunks Diaper Set (3-6 months)"},
       {description: "Trunks Diaper Set (6-9 months)"},
