@@ -3,7 +3,7 @@
 ; Title: home.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 22 May 2024
+; Last Updated: 04 June 2024
 ; Description: This code supports functionality for the home page and home component
 ; Sources Used: N/A
 =====================================
@@ -12,15 +12,100 @@
 <mat-card class="bg-white mat-elevation-z0">
   <mat-card-content>
     <div fxLayout="row wrap">
+
       <!--First Column-->
-      <div fxFlex="33" class="padding-right">
+      <div fxFlex="25" class="padding-right">
         <mat-card class="mat-elevation-z1 bg-light-green padding-right">
 
           <mat-card-title></mat-card-title>
 
           <mat-card-content>
           <div class="quick-stats">
-            <img src="./assets/2024stats.png" width="50%" alt="logo that says 2023 stats"><hr><br>
+            <img src="./assets/monthlystats.png" width="50%" alt="logo that says monthly stats"><hr><br>
+            <table class="home-table">
+              <TR>
+                <TD>Month</TD>
+                <TD>2023</TD>
+                <TD>2024</TD>
+              </TR>
+              <TR>
+                <TD>JAN</TD>
+                <TD>{{ jan2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ jan2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>FEB</TD>
+                <TD>{{ feb2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ feb2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>MAR</TD>
+                <TD>{{ mar2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ mar2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>APR</TD>
+                <TD>{{ apr2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ apr2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>MAY</TD>
+                <TD>{{ may2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ may2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>JUN</TD>
+                <TD>{{ jun2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ jun2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>JUL</TD>
+                <TD>{{ jul2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ jul2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>AUG</TD>
+                <TD>{{ aug2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ aug2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>SEP</TD>
+                <TD>{{ sep2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ sep2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>OCT</TD>
+                <TD>{{ oct2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ oct2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>NOV</TD>
+                <TD>{{ nov2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ nov2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD>DEC</TD>
+                <TD>{{ dec2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ dec2024['COUNT(*)'] || '0' }}</TD>
+              </TR>
+            </table>
+
+
+          </div>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!--Second Column-->
+      <div fxFlex="25" class="padding-right">
+        <mat-card class="mat-elevation-z1 bg-light-green padding-right">
+
+          <mat-card-title></mat-card-title>
+
+          <mat-card-content>
+          <div class="quick-stats">
+            <img src="./assets/2024stats.png" width="50%" alt="logo that says 2024 stats"><hr><br>
             <table class="home-table">
               <TR>
                 <TD class="left td-padding">Total Number of Sales:</TD>
@@ -102,8 +187,8 @@
         </mat-card>
       </div>
 
-      <!--Second Column-->
-      <div fxFlex="33"class="padding-right">
+      <!--Third Column-->
+      <div fxFlex="25"class="padding-right">
         <mat-card class="bg-light-green mat-elevation-z1">
           <mat-card-title></mat-card-title>
           <mat-card-content>
@@ -167,7 +252,7 @@
                   <TD>{{ luffy1824Count['COUNT(*)'] }}</TD>
                 </TR>
                 <TR>
-                  <TD class="bg-black font-white">Total Trunks Diaper Sets Sold:</TD>
+                  <TD class="bg-black font-white">Total Trunks Sets Sold:</TD>
                   <TD class="bg-black font-white">{{ trunksCount['COUNT(*)'] }}</TD>
                 </TR>
                 <TR>
@@ -183,7 +268,7 @@
                   <TD>{{ trunks69Count['COUNT(*)'] }}</TD>
                 </TR>
                 <TR>
-                  <TD class="bg-black font-white">Total Majin Buu Diaper Sets Sold:</TD>
+                  <TD class="bg-black font-white">Total Majin Buu Sets Sold:</TD>
                   <TD class="bg-black font-white">{{ majinCount['COUNT(*)'] }}</TD>
                 </TR>
                 <TR>
@@ -228,8 +313,8 @@
         </mat-card>
       </div>
 
-      <!--Third Column-->
-      <div fxFlex="33"class="padding-right">
+      <!--Fourth Column-->
+      <div fxFlex="25"class="padding-right">
         <mat-card class="bg-light-green mat-elevation-z1">
           <mat-card-title></mat-card-title>
           <mat-card-content>

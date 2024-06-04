@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 02 December 2023
+; Last Updated: 04 June 2024
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -32,6 +32,18 @@ export class ApiService {
     totalSalesCount2024: object;
     suppliesTotal2024: number;
     advertsTotal2024: number;
+    jan2024: object;
+    feb2024: object;
+    mar2024: object;
+    apr2024: object;
+    may2024: object;
+    jun2024: object;
+    jul2024: object;
+    aug2024: object;
+    sep2024: object;
+    oct2024: object;
+    nov2024: object;
+    dec2024: object;
     // 2023
     totalSales2023: number;
     totalShipping2023: number;
@@ -39,6 +51,18 @@ export class ApiService {
     totalSalesCount2023: object;
     suppliesTotal2023: number;
     advertsTotal2023: number;
+    jan2023: object;
+    feb2023: object;
+    mar2023: object;
+    apr2023: object;
+    may2023: object;
+    jun2023: object;
+    jul2023: object;
+    aug2023: object;
+    sep2023: object;
+    oct2023: object;
+    nov2023: object;
+    dec2023: object;
     // all-time
     totalSales: number;
     totalShipping: number;
@@ -77,6 +101,18 @@ export class ApiService {
      }> {
     return this.http.get<{
       // 2024
+      jan2024: object;
+      feb2024: object;
+      mar2024: object;
+      apr2024: object;
+      may2024: object;
+      jun2024: object;
+      jul2024: object;
+      aug2024: object;
+      sep2024: object;
+      oct2024: object;
+      nov2024: object;
+      dec2024: object;
       totalSales2024: number;
       totalShipping2024: number;
       totalEtsyFees2024: number;
@@ -84,6 +120,18 @@ export class ApiService {
       suppliesTotal2024: number;
       advertsTotal2024: number;
       // 2023
+      jan2023: object;
+      feb2023: object;
+      mar2023: object;
+      apr2023: object;
+      may2023: object;
+      jun2023: object;
+      jul2023: object;
+      aug2023: object;
+      sep2023: object;
+      oct2023: object;
+      nov2023: object;
+      dec2023: object;
       totalSales2023: number;
       totalShipping2023: number;
       totalEtsyFees2023: number;
