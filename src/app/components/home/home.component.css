@@ -1,3 +1,14 @@
+/*
+======================================
+; Title: home.component.css
+; Author: Chris Gorham
+; Date Created: 05 August 2023
+; Last Updated: 04 June 2024
+; Description: This code supports styling for the Home Component
+; Sources Used: N/A
+;=====================================
+*/
+
 .home-table {
   border: 2px;
   width: 100%;
@@ -8,3 +19,6 @@ td {
   padding-right: 8px;
 }
 
+bold {
+  font-weight:bolder;
+}
