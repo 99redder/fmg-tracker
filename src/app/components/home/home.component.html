@@ -3,7 +3,7 @@
 ; Title: home.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 04 June 2024
+; Last Updated: 05 June 2024
 ; Description: This code supports functionality for the home page and home component
 ; Sources Used: N/A
 =====================================
@@ -27,66 +27,79 @@
                 <TD><b>Month</b></TD>
                 <TD><b>2023</b></TD>
                 <TD><b>2024</b></TD>
+                <TD><b>2025</b></TD>
               </TR>
               <TR>
                 <TD>JAN</TD>
                 <TD>{{ jan2023['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ jan2024['COUNT(*)'] || '0' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>FEB</TD>
                 <TD>{{ feb2023['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ feb2024['COUNT(*)'] || '0' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>MAR</TD>
                 <TD>{{ mar2023['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ mar2024['COUNT(*)'] || '0' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>APR</TD>
                 <TD>{{ apr2023['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ apr2024['COUNT(*)'] || '0' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>MAY</TD>
                 <TD>{{ may2023['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ may2024['COUNT(*)'] || '0' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>JUN</TD>
                 <TD>{{ jun2023['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ jun2024['COUNT(*)'] || '0' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>JUL</TD>
                 <TD>{{ jul2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ jul2024['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ jul2024['COUNT(*)'] || '-' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>AUG</TD>
                 <TD>{{ aug2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ aug2024['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ aug2024['COUNT(*)'] || '-' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>SEP</TD>
                 <TD>{{ sep2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ sep2024['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ sep2024['COUNT(*)'] || '-' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>OCT</TD>
                 <TD>{{ oct2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ oct2024['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ oct2024['COUNT(*)'] || '-' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>NOV</TD>
                 <TD>{{ nov2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ nov2024['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ nov2024['COUNT(*)'] || '-' }}</TD>
+                <TD>-</TD>
               </TR>
               <TR>
                 <TD>DEC</TD>
                 <TD>{{ dec2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ dec2024['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ dec2024['COUNT(*)'] || '-' }}</TD>
+                <TD>-</TD>
               </TR>
             </table>
 
