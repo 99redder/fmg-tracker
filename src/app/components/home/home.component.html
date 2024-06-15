@@ -3,7 +3,7 @@
 ; Title: home.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 05 June 2024
+; Last Updated: 15 June 2024
 ; Description: This code supports functionality for the home page and home component
 ; Sources Used: N/A
 =====================================
@@ -14,7 +14,7 @@
     <div fxLayout="row wrap">
 
       <!--First Column-->
-      <div fxFlex="25" class="padding-right">
+      <div fxFlex="27" class="padding-right">
         <mat-card class="mat-elevation-z1 bg-light-green padding-right">
 
           <mat-card-title></mat-card-title>
@@ -24,82 +24,95 @@
             <img src="./assets/monthlystats.png" width="70%" alt="logo that says monthly stats"><hr><br>
             <table class="home-table">
               <TR class="bg-black font-white">
-                <TD><b>Month</b></TD>
+                <TD></TD>
                 <TD><b>2023</b></TD>
+                <TD></TD>
                 <TD><b>2024</b></TD>
-                <TD><b>2025</b></TD>
+                <TD></TD>
               </TR>
-              <TR>
+                <TR>
                 <TD>JAN</TD>
                 <TD>{{ jan2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ jan2023sales || '0' | currency }}</TD>
                 <TD>{{ jan2024['COUNT(*)'] || '0' }}</TD>
-                <TD>-</TD>
+                <TD>{{ jan2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>FEB</TD>
                 <TD>{{ feb2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ feb2023sales || '0' | currency }}</TD>
                 <TD>{{ feb2024['COUNT(*)'] || '0' }}</TD>
-                <TD>-</TD>
+                <TD>{{ feb2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>MAR</TD>
                 <TD>{{ mar2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ mar2023sales || '0' | currency }}</TD>
                 <TD>{{ mar2024['COUNT(*)'] || '0' }}</TD>
-                <TD>-</TD>
+                <TD>{{ mar2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>APR</TD>
                 <TD>{{ apr2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ apr2023sales || '0' | currency }}</TD>
                 <TD>{{ apr2024['COUNT(*)'] || '0' }}</TD>
-                <TD>-</TD>
+                <TD>{{ apr2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>MAY</TD>
                 <TD>{{ may2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ may2023sales || '0' | currency }}</TD>
                 <TD>{{ may2024['COUNT(*)'] || '0' }}</TD>
-                <TD>-</TD>
+                <TD>{{ may2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>JUN</TD>
                 <TD>{{ jun2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ jun2023sales || '0' | currency }}</TD>
                 <TD>{{ jun2024['COUNT(*)'] || '0' }}</TD>
-                <TD>-</TD>
+                <TD>{{ jun2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>JUL</TD>
                 <TD>{{ jul2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ jul2023sales || '0' | currency }}</TD>
                 <TD>{{ jul2024['COUNT(*)'] || '-' }}</TD>
-                <TD>-</TD>
+                <TD>{{ jul2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>AUG</TD>
                 <TD>{{ aug2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ aug2023sales || '0' | currency }}</TD>
                 <TD>{{ aug2024['COUNT(*)'] || '-' }}</TD>
-                <TD>-</TD>
+                <TD>{{ aug2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>SEP</TD>
                 <TD>{{ sep2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ sep2023sales || '0' | currency }}</TD>
                 <TD>{{ sep2024['COUNT(*)'] || '-' }}</TD>
-                <TD>-</TD>
+                <TD>{{ sep2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>OCT</TD>
                 <TD>{{ oct2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ oct2023sales || '0' | currency }}</TD>
                 <TD>{{ oct2024['COUNT(*)'] || '-' }}</TD>
-                <TD>-</TD>
+                <TD>{{ oct2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>NOV</TD>
                 <TD>{{ nov2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ nov2023sales || '0' | currency }}</TD>
                 <TD>{{ nov2024['COUNT(*)'] || '-' }}</TD>
-                <TD>-</TD>
+                <TD>{{ nov2024sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD>DEC</TD>
                 <TD>{{ dec2023['COUNT(*)'] || '0' }}</TD>
+                <TD>{{ dec2023sales || '0' | currency }}</TD>
                 <TD>{{ dec2024['COUNT(*)'] || '-' }}</TD>
-                <TD>-</TD>
+                <TD>{{ dec2024sales || '0' | currency }}</TD>
               </TR>
             </table>
 
@@ -201,7 +214,7 @@
       </div>
 
       <!--Third Column-->
-      <div fxFlex="25"class="padding-right">
+      <div fxFlex="23"class="padding-right">
         <mat-card class="bg-light-green mat-elevation-z1">
           <mat-card-title></mat-card-title>
           <mat-card-content>
@@ -297,7 +310,7 @@
                 <TD>{{ majin69Count['COUNT(*)'] }}</TD>
               </TR>
                 <TR>
-                  <TD class="bg-black font-white">Total Goku Baby Hats Sold:</TD>
+                  <TD class="bg-black font-white">Total Goku Hats Sold:</TD>
                   <TD class="bg-black font-white">{{ gokuHatCount['COUNT(*)'] }}</TD>
                 </TR>
                 <TR>
@@ -313,7 +326,7 @@
                 <TD>{{ gokuHat69Count['COUNT(*)'] }}</TD>
               </TR>
                 <TR>
-                  <TD class="bg-black font-white">Total Gohan Hat Patterns Sold:</TD>
+                  <TD class="bg-black font-white">Total Gohan Patterns Sold:</TD>
                   <TD class="bg-black font-white">{{ patternCount['COUNT(*)'] }}</TD>
                 </TR>
               </table>

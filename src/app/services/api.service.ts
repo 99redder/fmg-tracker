@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 04 June 2024
+; Last Updated: 15 June 2024
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -44,6 +44,18 @@ export class ApiService {
     oct2024: object;
     nov2024: object;
     dec2024: object;
+    jan2024sales: number;
+    feb2024sales: number;
+    mar2024sales: number;
+    apr2024sales: number;
+    may2024sales: number;
+    jun2024sales: number;
+    jul2024sales: number;
+    aug2024sales: number;
+    sep2024sales: number;
+    oct2024sales: number;
+    nov2024sales: number;
+    dec2024sales: number;
     // 2023
     totalSales2023: number;
     totalShipping2023: number;
@@ -63,6 +75,18 @@ export class ApiService {
     oct2023: object;
     nov2023: object;
     dec2023: object;
+    jan2023sales: number;
+    feb2023sales: number;
+    mar2023sales: number;
+    apr2023sales: number;
+    may2023sales: number;
+    jun2023sales: number;
+    jul2023sales: number;
+    aug2023sales: number;
+    sep2023sales: number;
+    oct2023sales: number;
+    nov2023sales: number;
+    dec2023sales: number;
     // all-time
     totalSales: number;
     totalShipping: number;
@@ -113,6 +137,18 @@ export class ApiService {
       oct2024: object;
       nov2024: object;
       dec2024: object;
+      jan2024sales: number;
+      feb2024sales: number;
+      mar2024sales: number;
+      apr2024sales: number;
+      may2024sales: number;
+      jun2024sales: number;
+      jul2024sales: number;
+      aug2024sales: number;
+      sep2024sales: number;
+      oct2024sales: number;
+      nov2024sales: number;
+      dec2024sales: number;
       totalSales2024: number;
       totalShipping2024: number;
       totalEtsyFees2024: number;
@@ -132,6 +168,18 @@ export class ApiService {
       oct2023: object;
       nov2023: object;
       dec2023: object;
+      jan2023sales: number;
+      feb2023sales: number;
+      mar2023sales: number;
+      apr2023sales: number;
+      may2023sales: number;
+      jun2023sales: number;
+      jul2023sales: number;
+      aug2023sales: number;
+      sep2023sales: number;
+      oct2023sales: number;
+      nov2023sales: number;
+      dec2023sales: number;
       totalSales2023: number;
       totalShipping2023: number;
       totalEtsyFees2023: number;

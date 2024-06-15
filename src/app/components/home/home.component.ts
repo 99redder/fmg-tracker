@@ -3,7 +3,7 @@
 ; Title: home.component.ts
 ; Author: Chris Gorham
 ; Date Created: 21 July 2023
-; Last Updated: 04 June 2024
+; Last Updated: 15 June 2024
 ; Description: This code supports functionality for the Home Component
 ; Sources Used: N/A
 ;=====================================
@@ -40,6 +40,18 @@ export class HomeComponent implements OnInit {
   oct2024: object | undefined;
   nov2024: object | undefined;
   dec2024: object | undefined;
+  jan2024sales: number | undefined;
+  feb2024sales: number | undefined;
+  mar2024sales: number | undefined;
+  apr2024sales: number | undefined;
+  may2024sales: number | undefined;
+  jun2024sales: number | undefined;
+  jul2024sales: number | undefined;
+  aug2024sales: number | undefined;
+  sep2024sales: number | undefined;
+  oct2024sales: number | undefined;
+  nov2024sales: number | undefined;
+  dec2024sales: number | undefined;
   // variables for 2023
   totalSales2023: number | undefined;
   totalShipping2023: number | undefined;
@@ -61,6 +73,18 @@ export class HomeComponent implements OnInit {
   oct2023: object | undefined;
   nov2023: object | undefined;
   dec2023: object | undefined;
+  jan2023sales: number | undefined;
+  feb2023sales: number | undefined;
+  mar2023sales: number | undefined;
+  apr2023sales: number | undefined;
+  may2023sales: number | undefined;
+  jun2023sales: number | undefined;
+  jul2023sales: number | undefined;
+  aug2023sales: number | undefined;
+  sep2023sales: number | undefined;
+  oct2023sales: number | undefined;
+  nov2023sales: number | undefined;
+  dec2023sales: number | undefined;
   // variables for all-time
   totalSales: number | undefined;
   totalShipping: number | undefined;
@@ -123,6 +147,18 @@ export class HomeComponent implements OnInit {
         this.oct2024 = data.oct2024;
         this.nov2024 = data.nov2024;
         this.dec2024 = data.dec2024;
+        this.jan2024sales = data.jan2024sales;
+        this.feb2024sales = data.feb2024sales;
+        this.mar2024sales = data.mar2024sales;
+        this.apr2024sales = data.apr2024sales;
+        this.may2024sales = data.may2024sales;
+        this.jun2024sales = data.jun2024sales;
+        this.jul2024sales = data.jul2024sales;
+        this.aug2024sales = data.aug2024sales;
+        this.sep2024sales = data.sep2024sales;
+        this.oct2024sales = data.oct2024sales;
+        this.nov2024sales = data.nov2024sales;
+        this.dec2024sales = data.dec2024sales;
         // 2023
         this.totalSales2023 = data.totalSales2023;
         this.totalShipping2023 = data.totalShipping2023;
@@ -142,6 +178,18 @@ export class HomeComponent implements OnInit {
         this.oct2023 = data.oct2023;
         this.nov2023 = data.nov2023;
         this.dec2023 = data.dec2023;
+        this.jan2023sales = data.jan2023sales;
+        this.feb2023sales = data.feb2023sales;
+        this.mar2023sales = data.mar2023sales;
+        this.apr2023sales = data.apr2023sales;
+        this.may2023sales = data.may2023sales;
+        this.jun2023sales = data.jun2023sales;
+        this.jul2023sales = data.jul2023sales;
+        this.aug2023sales = data.aug2023sales;
+        this.sep2023sales = data.sep2023sales;
+        this.oct2023sales = data.oct2023sales;
+        this.nov2023sales = data.nov2023sales;
+        this.dec2023sales = data.dec2023sales;
         // all time
         this.totalSales = data.totalSales;
         this.totalShipping = data.totalShipping;
