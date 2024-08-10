@@ -3,7 +3,7 @@
 ; Title: home.component.ts
 ; Author: Chris Gorham
 ; Date Created: 21 July 2023
-; Last Updated: 15 June 2024
+; Last Updated: 10 August 2024
 ; Description: This code supports functionality for the Home Component
 ; Sources Used: N/A
 ;=====================================
@@ -107,6 +107,9 @@ export class HomeComponent implements OnInit {
   gokuHat03Count: object | undefined;
   gokuHat36Count: object | undefined;
   gokuHat69Count: object | undefined;
+  gokuHat912Count: object | undefined;
+  gokuHat1218Count: object | undefined;
+  gokuHat1824Count: object | undefined;
   majinCount: object | undefined;
   majin03Count: object | undefined;
   majin36Count: object | undefined;
@@ -210,6 +213,9 @@ export class HomeComponent implements OnInit {
         this.gokuHat03Count = data.gokuHat03Count;
         this.gokuHat36Count = data.gokuHat36Count;
         this.gokuHat69Count = data.gokuHat69Count;
+        this.gokuHat912Count = data.gokuHat912Count;
+        this.gokuHat1218Count = data.gokuHat1218Count;
+        this.gokuHat1824Count = data.gokuHat1824Count;
         this.majinCount = data.majinCount;
         this.majin03Count = data.majin03Count;
         this.majin36Count = data.majin36Count;

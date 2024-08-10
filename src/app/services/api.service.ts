@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 15 June 2024
+; Last Updated: 10 August 2024
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -115,6 +115,9 @@ export class ApiService {
     gokuHat03Count: object;
     gokuHat36Count: object;
     gokuHat69Count: object;
+    gokuHat912Count: object;
+    gokuHat1218Count: object;
+    gokuHat1824Count: object;
     luffyCount: object;
     luffy03Count: object;
     luffy36Count: object;
@@ -214,6 +217,9 @@ export class ApiService {
       gokuHat03Count: object;
       gokuHat36Count: object;
       gokuHat69Count: object;
+      gokuHat912Count: object;
+      gokuHat1218Count: object;
+      gokuHat1824Count: object;
       luffyCount: object;
       luffy03Count: object;
       luffy36Count: object;

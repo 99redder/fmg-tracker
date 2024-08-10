@@ -3,7 +3,7 @@
 ; Title: home.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 27 July 2024
+; Last Updated: 10 August 2024
 ; Description: This code supports functionality for the home page and home component
 ; Sources Used: N/A
 =====================================
@@ -293,6 +293,9 @@
               <img src="./assets/itemstats.png" width="50%" alt="logo that says Item Stats"><hr>
               <table class="home-table">
                 <TR>
+
+
+
                   <TD class="bg-black font-white">Total Gohan Hats Sold:</TD>
                   <TD class="bg-black font-white">{{ gohanCount['COUNT(*)'] }}</TD>
                 </TR>
@@ -395,6 +398,18 @@
               <TR>
                 <TD>6-9 months:</TD>
                 <TD>{{ gokuHat69Count['COUNT(*)'] }}</TD>
+              </TR>
+              <TR>
+                <TD>9-12 months:</TD>
+                <TD>{{ gokuHat912Count['COUNT(*)'] }}</TD>
+              </TR>
+              <TR>
+                <TD>12-18 months:</TD>
+                <TD>{{ gokuHat1218Count['COUNT(*)'] }}</TD>
+              </TR>
+              <TR>
+                <TD>18-24 months:</TD>
+                <TD>{{ gokuHat1824Count['COUNT(*)'] }}</TD>
               </TR>
                 <TR>
                   <TD class="bg-black font-white">Total Gohan Patterns Sold:</TD>
