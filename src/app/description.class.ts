@@ -44,6 +44,7 @@ export class Description {
       {description: "Goku Baby Hat (9-12 months)"},
       {description: "Goku Baby Hat (12-18 months)"},
       {description: "Goku Baby Hat (18-24 months)"},
+      {description: "Goku Baby Hat (Adult)"},
       {description: "Goku Onesie and Hat (0-6 months)"},
       {description: "Goku Onesie and Hat (6-12 months)"},
       {description: "Luffy Baby Straw Hat (0-3 months)"},
