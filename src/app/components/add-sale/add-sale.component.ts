@@ -105,7 +105,7 @@ export class AddSaleComponent implements OnInit {
       shippingCost: ['', Validators.compose([Validators.required, Validators.pattern('^[0-9.]*$')])],
       oldMaterialOffset: ['', Validators.compose([Validators.required,Validators.pattern('^[0-9.]*$')])],
       customBoxCost: ['', Validators.compose([Validators.required,Validators.pattern('^[0-9.]*$')])],
-      notes: ['', Validators.compose([Validators.pattern('^[A-Za-z0-9.,-:;()$ ]*$')])]
+      notes: ['', Validators.compose([Validators.pattern('[A-Za-z0-9.,-:;()$ ]*$')])]
     })
   }
 
