@@ -3,8 +3,8 @@
 ; Title: description.class.ts
 ; Author: Chris Gorham
 ; Date Created: 03 August 2023
-; Last Updated: 10 August 2024
-; Description: This code supports functionality for the Item Descriptions
+; Last Updated: 14 July 2025
+; Description: This code supports functionality for the Item Descriptions. If you need to add a new item, you can add it to the array below.
 ; Sources Used: N/A
 ;=====================================
 */
