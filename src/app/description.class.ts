@@ -3,7 +3,7 @@
 ; Title: description.class.ts
 ; Author: Chris Gorham
 ; Date Created: 03 August 2023
-; Last Updated: 14 July 2025
+; Last Updated: 16 August 2025
 ; Description: This code supports functionality for the Item Descriptions. If you need to add a new item, you can add it to the array below.
 ; Sources Used: N/A
 ;=====================================
@@ -62,6 +62,13 @@ export class Description {
       {description: "Raphael Diaper Set (0-3 months)"},
       {description: "Raphael Diaper Set (3-6 months)"},
       {description: "Raphael Diaper Set (6-9 months)"},
+      {description: "Rumi Baby Hat (0-3 months)"},
+      {description: "Rumi Baby Hat (3-6 months)"},
+      {description: "Rumi Baby Hat (6-9 months)"},
+      {description: "Rumi Baby Hat (9-12 months)"},
+      {description: "Rumi Baby Hat (12-18 months)"},
+      {description: "Rumi Baby Hat (18-24 months)"},
+      {description: "Rumi Baby Hat (Adult)"},
       {description: "Shenron Shenlong Diaper Set (0-3 months)"},
       {description: "Shenron Shenlong Diaper Set (3-6 months)"},
       {description: "Shenron Shenlong Diaper Set (6-9 months)"},
