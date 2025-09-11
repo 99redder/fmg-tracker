@@ -3,7 +3,7 @@
 ; Title: description.class.ts
 ; Author: Chris Gorham
 ; Date Created: 03 August 2023
-; Last Updated: 16 August 2025
+; Last Updated: 10 September 2025
 ; Description: This code supports functionality for the Item Descriptions. If you need to add a new item, you can add it to the array below.
 ; Sources Used: N/A
 ;=====================================
@@ -25,6 +25,9 @@ export class Description {
       {description: "Baby Gohan Hat (9-12 months)"},
       {description: "Baby Gohan Hat (12-18 months)"},
       {description: "Baby Gohan Hat (18-24 months)"},
+      {description: "Baby Gohan Hat (Youth Small)"},
+      {description: "Baby Gohan Hat (Youth Large)"},
+      {description: "Baby Gohan Hat (Adult)"},
       {description: "Baby Gohan Hat Pattern"},
       {description: "Charmander Doll"},
       {description: "Chiaotzu Hat (0-3 months)"},
@@ -44,7 +47,10 @@ export class Description {
       {description: "Goku Baby Hat (9-12 months)"},
       {description: "Goku Baby Hat (12-18 months)"},
       {description: "Goku Baby Hat (18-24 months)"},
+      {description: "Goku Baby Hat (Youth Small)"},
+      {description: "Goku Baby Hat (Youth Large)"},
       {description: "Goku Baby Hat (Adult)"},
+      {description: "Goku Baby Hat Pattern"},
       {description: "Goku Onesie and Hat (0-6 months)"},
       {description: "Goku Onesie and Hat (6-12 months)"},
       {description: "Luffy Baby Straw Hat (0-3 months)"},
@@ -68,6 +74,8 @@ export class Description {
       {description: "Rumi Baby Hat (9-12 months)"},
       {description: "Rumi Baby Hat (12-18 months)"},
       {description: "Rumi Baby Hat (18-24 months)"},
+      {description: "Rumi Baby Hat (Youth Small)"},
+      {description: "Rumi Baby Hat (Youth Large)"},
       {description: "Rumi Baby Hat (Adult)"},
       {description: "Shenron Shenlong Diaper Set (0-3 months)"},
       {description: "Shenron Shenlong Diaper Set (3-6 months)"},
@@ -78,6 +86,9 @@ export class Description {
       {description: "Shenron Shenlong Hat (9-12 months)"},
       {description: "Shenron Shenlong Hat (12-18 months)"},
       {description: "Shenron Shenlong Hat (18-24 months)"},
+      {description: "Super Saiyan Goku Hat (0-3 months)"},
+      {description: "Super Saiyan Goku Hat (3-6 months)"},
+      {description: "Super Saiyan Goku Hat (6-9 months)"},
       {description: "Trunks Diaper Set (0-3 months)"},
       {description: "Trunks Diaper Set (3-6 months)"},
       {description: "Trunks Diaper Set (6-9 months)"},
