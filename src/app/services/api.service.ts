@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 16 November 2024
+; Last Updated: 12 September 2025
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -133,7 +133,11 @@ export class ApiService {
     gohan912Count: object;
     gohan1218Count: object;
     gohan1824Count: object;
+    gohanYouthSmallCount: object;
+    gohanYouthLargeCount: object;
+    gohanAdultCount: object;
     patternCount: object;
+    patternGokuCount: object;
     trunksCount: object;
     trunks03Count: object;
     trunks36Count: object;
@@ -157,6 +161,7 @@ export class ApiService {
     luffy912Count: object;
     luffy1218Count: object;
     luffy1824Count: object;
+    rumiCount: object;
      }> {
     return this.http.get<{
       // 2025
@@ -267,7 +272,11 @@ export class ApiService {
       gohan912Count: object;
       gohan1218Count: object;
       gohan1824Count: object;
+      gohanYouthSmallCount: object;
+      gohanYouthLargeCount: object;
+      gohanAdultCount: object;
       patternCount: object;
+      patternGokuCount: object;
       trunksCount: object;
       trunks03Count: object;
       trunks36Count: object;
@@ -291,6 +300,7 @@ export class ApiService {
       luffy912Count: object;
       luffy1218Count: object;
       luffy1824Count: object;
+      rumiCount: object;
     }>(`${this.baseUrl}/multipleQueries`);
   }
 }

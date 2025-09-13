@@ -3,7 +3,7 @@
 ; Title: home.component.ts
 ; Author: Chris Gorham
 ; Date Created: 21 July 2023
-; Last Updated: 16 November 2024
+; Last Updated: 12 September 2025
 ; Description: This code supports functionality for the Home Component
 ; Sources Used: N/A
 ;=====================================
@@ -135,7 +135,11 @@ export class HomeComponent implements OnInit {
   gohan912Count: object | undefined;
   gohan1218Count: object | undefined;
   gohan1824Count: object | undefined;
+  gohanYouthSmallCount: object | undefined;
+  gohanYouthLargeCount: object | undefined;
+  gohanAdultCount: object | undefined;
   patternCount: object | undefined;
+  patternGokuCount: object | undefined;
   gokuHatCount: object | undefined;
   gokuHat03Count: object | undefined;
   gokuHat36Count: object | undefined;
@@ -159,6 +163,7 @@ export class HomeComponent implements OnInit {
   luffy912Count: object | undefined;
   luffy1218Count: object | undefined;
   luffy1824Count: object | undefined;
+  rumiCount: object | undefined;
 
   constructor(private apiService: ApiService) {}
 
@@ -273,6 +278,10 @@ export class HomeComponent implements OnInit {
         this.gohan912Count = data.gohan912Count;
         this.gohan1218Count = data.gohan1218Count;
         this.gohan1824Count = data.gohan1824Count;
+        this.gohanYouthSmallCount = data.gohanYouthSmallCount;
+        this.gohanYouthLargeCount = data.gohanYouthLargeCount;
+        this.gohanAdultCount = data.gohanAdultCount;
+        this.patternGokuCount = data.patternGokuCount;
         this.patternCount = data.patternCount;
         this.gokuHatCount = data.gokuHatCount;
         this.gokuHat03Count = data.gokuHat03Count;
@@ -297,6 +306,7 @@ export class HomeComponent implements OnInit {
         this.luffy912Count = data.luffy912Count;
         this.luffy1218Count = data.luffy1218Count;
         this.luffy1824Count = data.luffy1824Count;
+        this.rumiCount = data.rumiCount;
         // calculates total fees and costs for 2025
         this.totalFeesAndCosts2025 = Number(this.suppliesTotal2025) + Number(this.totalEtsyFees2025) + Number(this.totalShipping2025) + Number(this.advertsTotal2025);
         // calculates profit for 2025
