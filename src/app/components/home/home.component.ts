@@ -3,7 +3,7 @@
 ; Title: home.component.ts
 ; Author: Chris Gorham
 ; Date Created: 21 July 2023
-; Last Updated: 12 September 2025
+; Last Updated: 05 December 2025
 ; Description: This code supports functionality for the Home Component
 ; Sources Used: N/A
 ;=====================================
@@ -19,6 +19,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  // variables for 2026
+  totalSales2026: number | undefined;
+  totalShipping2026: number | undefined;
+  totalEtsyFees2026: number | undefined;
+  totalSalesCount2026: object | undefined;
+  suppliesTotal2026: number | undefined;
+  advertsTotal2026: number | undefined;
+  totalFeesAndCosts2026: number;
+  profit2026: number;
+  jan2026: object | undefined;
+  feb2026: object | undefined;
+  mar2026: object | undefined;
+  apr2026: object | undefined;
+  may2026: object | undefined;
+  jun2026: object | undefined;
+  jul2026: object | undefined;
+  aug2026: object | undefined;
+  sep2026: object | undefined;
+  oct2026: object | undefined;
+  nov2026: object | undefined;
+  dec2026: object | undefined;
+  jan2026sales: number | undefined;
+  feb2026sales: number | undefined;
+  mar2026sales: number | undefined;
+  apr2026sales: number | undefined;
+  may2026sales: number | undefined;
+  jun2026sales: number | undefined;
+  jul2026sales: number | undefined;
+  aug2026sales: number | undefined;
+  sep2026sales: number | undefined;
+  oct2026sales: number | undefined;
+  nov2026sales: number | undefined;
+  dec2026sales: number | undefined;
   // variables for 2025
   totalSales2025: number | undefined;
   totalShipping2025: number | undefined;
@@ -170,6 +203,37 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getMultipleQueries().subscribe(
       (data) => {
+        // 2026
+        this.totalSales2026 = data.totalSales2026;
+        this.totalShipping2026 = data.totalShipping2026;
+        this.totalEtsyFees2026 = data.totalEtsyFees2026;
+        this.totalSalesCount2026 = data.totalSalesCount2026;
+        this.suppliesTotal2026 = data.suppliesTotal2026;
+        this.advertsTotal2026 = data.advertsTotal2026;
+        this.jan2026 = data.jan2026;
+        this.feb2026 = data.feb2026;
+        this.mar2026 = data.mar2026;
+        this.apr2026 = data.apr2026;
+        this.may2026 = data.may2026;
+        this.jun2026 = data.jun2026;
+        this.jul2026 = data.jul2026;
+        this.aug2026 = data.aug2026;
+        this.sep2026 = data.sep2026;
+        this.oct2026 = data.oct2026;
+        this.nov2026 = data.nov2026;
+        this.dec2026 = data.dec2026;
+        this.jan2026sales = data.jan2026sales;
+        this.feb2026sales = data.feb2026sales;
+        this.mar2026sales = data.mar2026sales;
+        this.apr2026sales = data.apr2026sales;
+        this.may2026sales = data.may2026sales;
+        this.jun2026sales = data.jun2026sales;
+        this.jul2026sales = data.jul2026sales;
+        this.aug2026sales = data.aug2026sales;
+        this.sep2026sales = data.sep2026sales;
+        this.oct2026sales = data.oct2026sales;
+        this.nov2026sales = data.nov2026sales;
+        this.dec2026sales = data.dec2026sales;
         // 2025
         this.totalSales2025 = data.totalSales2025;
         this.totalShipping2025 = data.totalShipping2025;
@@ -307,6 +371,10 @@ export class HomeComponent implements OnInit {
         this.luffy1218Count = data.luffy1218Count;
         this.luffy1824Count = data.luffy1824Count;
         this.rumiCount = data.rumiCount;
+        // calculates total fees and costs for 2026
+        this.totalFeesAndCosts2026 = Number(this.suppliesTotal2026) + Number(this.totalEtsyFees2026) + Number(this.totalShipping2026) + Number(this.advertsTotal2026);
+        // calculates profit for 2026
+        this.profit2026 = this.totalSales2026 - Number(this.totalFeesAndCosts2026);
         // calculates total fees and costs for 2025
         this.totalFeesAndCosts2025 = Number(this.suppliesTotal2025) + Number(this.totalEtsyFees2025) + Number(this.totalShipping2025) + Number(this.advertsTotal2025);
         // calculates profit for 2025

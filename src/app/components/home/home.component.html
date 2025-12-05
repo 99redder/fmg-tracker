@@ -3,7 +3,7 @@
 ; Title: home.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 10 September 2025
+; Last Updated: 05 December 2025
 ; Description: This code supports functionality for the home page and home component
 ; Sources Used: N/A
 =====================================
@@ -25,120 +25,120 @@
             <table class="home-table">
               <TR class="bg-black font-white">
                 <TD></TD>
-                <TD><b>2023</b></TD>
-                <TD></TD>
                 <TD><b>2024</b></TD>
                 <TD></TD>
                 <TD><b>2025</b></TD>
                 <TD></TD>
+                <TD><b>2026</b></TD>
+                <TD></TD>
               </TR>
                 <TR>
                 <TD><b>JAN</b></TD>
-                <TD>{{ jan2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ jan2023sales || '0' | currency }}</TD>
                 <TD>{{ jan2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ jan2024sales || '0' | currency }}</TD>
-                <TD>{{ jan2025['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ jan2025['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ jan2025sales || '0' | currency }}</TD>
+                <TD>{{ jan2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ jan2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>FEB</b></TD>
-                <TD>{{ feb2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ feb2023sales || '0' | currency }}</TD>
                 <TD>{{ feb2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ feb2024sales || '0' | currency }}</TD>
-                <TD>{{ feb2025['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ feb2025['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ feb2025sales || '0' | currency }}</TD>
+                <TD>{{ feb2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ feb2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>MAR</b></TD>
-                <TD>{{ mar2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ mar2023sales || '0' | currency }}</TD>
                 <TD>{{ mar2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ mar2024sales || '0' | currency }}</TD>
-                <TD>{{ mar2025['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ mar2025['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ mar2025sales || '0' | currency }}</TD>
+                <TD>{{ mar2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ mar2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>APR</b></TD>
-                <TD>{{ apr2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ apr2023sales || '0' | currency }}</TD>
                 <TD>{{ apr2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ apr2024sales || '0' | currency }}</TD>
-                <TD>{{ apr2025['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ apr2025['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ apr2025sales || '0' | currency }}</TD>
+                <TD>{{ apr2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ apr2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>MAY</b></TD>
-                <TD>{{ may2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ may2023sales || '0' | currency }}</TD>
                 <TD>{{ may2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ may2024sales || '0' | currency }}</TD>
-                <TD>{{ may2025['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ may2025['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ may2025sales || '0' | currency }}</TD>
+                <TD>{{ may2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ may2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>JUN</b></TD>
-                <TD>{{ jun2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ jun2023sales || '0' | currency }}</TD>
                 <TD>{{ jun2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ jun2024sales || '0' | currency }}</TD>
-                <TD>{{ jun2025['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ jun2025['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ jun2025sales || '0' | currency }}</TD>
+                <TD>{{ jun2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ jun2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>JUL</b></TD>
-                <TD>{{ jul2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ jul2023sales || '0' | currency }}</TD>
-                <TD>{{ jul2024['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ jul2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ jul2024sales || '0' | currency }}</TD>
                 <TD>{{ jul2025['COUNT(*)'] || '-' }}</TD>
                 <TD>{{ jul2025sales || '0' | currency }}</TD>
+                <TD>{{ jul2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ jul2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>AUG</b></TD>
-                <TD>{{ aug2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ aug2023sales || '0' | currency }}</TD>
-                <TD>{{ aug2024['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ aug2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ aug2024sales || '0' | currency }}</TD>
                 <TD>{{ aug2025['COUNT(*)'] || '-' }}</TD>
                 <TD>{{ aug2025sales || '0' | currency }}</TD>
+                <TD>{{ aug2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ aug2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>SEP</b></TD>
-                <TD>{{ sep2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ sep2023sales || '0' | currency }}</TD>
-                <TD>{{ sep2024['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ sep2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ sep2024sales || '0' | currency }}</TD>
                 <TD>{{ sep2025['COUNT(*)'] || '-' }}</TD>
                 <TD>{{ sep2025sales || '0' | currency }}</TD>
+                <TD>{{ sep2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ sep2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>OCT</b></TD>
-                <TD>{{ oct2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ oct2023sales || '0' | currency }}</TD>
-                <TD>{{ oct2024['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ oct2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ oct2024sales || '0' | currency }}</TD>
                 <TD>{{ oct2025['COUNT(*)'] || '-' }}</TD>
                 <TD>{{ oct2025sales || '0' | currency }}</TD>
+                <TD>{{ oct2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ oct2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>NOV</b></TD>
-                <TD>{{ nov2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ nov2023sales || '0' | currency }}</TD>
-                <TD>{{ nov2024['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ nov2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ nov2024sales || '0' | currency }}</TD>
                 <TD>{{ nov2025['COUNT(*)'] || '-' }}</TD>
                 <TD>{{ nov2025sales || '0' | currency }}</TD>
+                <TD>{{ nov2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ nov2026sales || '0' | currency }}</TD>
               </TR>
               <TR>
                 <TD><b>DEC</b></TD>
-                <TD>{{ dec2023['COUNT(*)'] || '0' }}</TD>
-                <TD>{{ dec2023sales || '0' | currency }}</TD>
-                <TD>{{ dec2024['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ dec2024['COUNT(*)'] || '0' }}</TD>
                 <TD>{{ dec2024sales || '0' | currency }}</TD>
                 <TD>{{ dec2025['COUNT(*)'] || '-' }}</TD>
                 <TD>{{ dec2025sales || '0' | currency }}</TD>
+                <TD>{{ dec2026['COUNT(*)'] || '-' }}</TD>
+                <TD>{{ dec2026sales || '0' | currency }}</TD>
               </TR>
             </table>
 
@@ -207,7 +207,49 @@
 
           <mat-card-content>
           <div class="quick-stats">
+
+            <!--2026-->
+
+            <img src="./assets/2026stats.png" width="50%" alt="logo that says 2026 stats"><hr>
+            <table class="home-table">
+              <TR>
+                <TD class="left td-padding">Total Number of Sales:</TD>
+                <TD class="right td-padding">{{ totalSalesCount2026['COUNT(*)'] || '0' }}</TD>
+              </TR>
+              <TR>
+                <TD class="bg-black font-white"><b>Total Sales Volume:</b></TD>
+                <TD class="bg-black font-white"><b>{{ totalSales2026 || '0' | currency }}</b></TD>
+              </TR>
+              <br>
+              <TR>
+                <TD>Total Etsy Fees:</TD>
+                <TD>{{ totalEtsyFees2026 || '0' | currency }}</TD>
+              </TR>
+              <TR>
+                <TD>Total Shipping Costs:</TD>
+                <TD>{{ totalShipping2026 || '0' | currency }}</TD>
+              </TR>
+              <TR>
+                <TD>Total Supplies Costs:</TD>
+                <TD>{{ suppliesTotal2026 || '0' | currency }}</TD>
+              </TR>
+              <TR>
+                <TD>Total Advertising Costs:</TD>
+                <TD>{{ advertsTotal2026 || '0' | currency }}</TD>
+              </TR>
+              <TR>
+                <TD class="bg-black font-white"><b>Total Fees and Costs:</b></TD>
+                <TD class="bg-black font-white"><b>{{  totalFeesAndCosts2026 | currency }}</b></TD>
+              </TR>
+              <br>
+              <TR>
+                <TD class="bg-black font-white"><b>Profit:</b></TD>
+                <TD class="bg-black font-white"><b>{{ profit2026 | currency }}</b></TD>
+              </TR>
+            </table><br><br><br>
+
             <!--2025-->
+
             <img src="./assets/2025stats.png" width="50%" alt="logo that says 2025 stats"><hr>
             <table class="home-table">
               <TR>
@@ -245,7 +287,9 @@
                 <TD class="bg-black font-white"><b>{{ profit2025 | currency }}</b></TD>
               </TR>
             </table><br><br><br>
+
             <!--2024-->
+
             <img src="./assets/2024stats.png" width="50%" alt="logo that says 2024 stats"><hr>
             <table class="home-table">
               <TR>

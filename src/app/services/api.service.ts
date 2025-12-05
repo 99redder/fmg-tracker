@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 12 September 2025
+; Last Updated: 05 December 2025
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -25,6 +25,37 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getMultipleQueries(): Observable<{
+    // 2026
+    totalSales2026: number;
+    totalShipping2026: number;
+    totalEtsyFees2026: number;
+    totalSalesCount2026: object;
+    suppliesTotal2026: number;
+    advertsTotal2026: number;
+    jan2026: object;
+    feb2026: object;
+    mar2026: object;
+    apr2026: object;
+    may2026: object;
+    jun2026: object;
+    jul2026: object;
+    aug2026: object;
+    sep2026: object;
+    oct2026: object;
+    nov2026: object;
+    dec2026: object;
+    jan2026sales: number;
+    feb2026sales: number;
+    mar2026sales: number;
+    apr2026sales: number;
+    may2026sales: number;
+    jun2026sales: number;
+    jul2026sales: number;
+    aug2026sales: number;
+    sep2026sales: number;
+    oct2026sales: number;
+    nov2026sales: number;
+    dec2026sales: number;
     // 2025
     totalSales2025: number;
     totalShipping2025: number;
@@ -164,6 +195,37 @@ export class ApiService {
     rumiCount: object;
      }> {
     return this.http.get<{
+      // 2026
+      jan2026: object;
+      feb2026: object;
+      mar2026: object;
+      apr2026: object;
+      may2026: object;
+      jun2026: object;
+      jul2026: object;
+      aug2026: object;
+      sep2026: object;
+      oct2026: object;
+      nov2026: object;
+      dec2026: object;
+      jan2026sales: number;
+      feb2026sales: number;
+      mar2026sales: number;
+      apr2026sales: number;
+      may2026sales: number;
+      jun2026sales: number;
+      jul2026sales: number;
+      aug2026sales: number;
+      sep2026sales: number;
+      oct2026sales: number;
+      nov2026sales: number;
+      dec2026sales: number;
+      totalSales2026: number;
+      totalShipping2026: number;
+      totalEtsyFees2026: number;
+      totalSalesCount2026: object;
+      suppliesTotal2026: number;
+      advertsTotal2026: number;
       // 2025
       jan2025: object;
       feb2025: object;
