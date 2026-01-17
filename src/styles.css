@@ -3,14 +3,18 @@
 ; Title: styles.css
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 08 September 2023
+; Last Updated: 17 January 2026
 ; Description: This code supports CSS styling for the entire app
 ; Sources Used: N/A
 ;=====================================
 */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding-bottom: 50px; /* Space for fixed footer */
+}
 
 .smaller-text {
   font-size: smaller;
@@ -232,4 +236,226 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .notes-width {
   width: 65%;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - Screen Size Breakpoints
+   ========================================== */
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-container {
+    width: 98%;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .padding-right {
+    padding-right: 10px;
+  }
+
+  .padding-left {
+    padding-left: 10px;
+  }
+
+  .medium-padding-left {
+    padding-left: 15px;
+  }
+
+  .big-padding-left {
+    padding-left: 25px;
+  }
+
+  .edit-padding-left {
+    padding-left: 25px;
+  }
+
+  .theme-button {
+    width: 140px;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .theme-button-mini,
+  .theme-button-mini-yellow,
+  .theme-button-mini-orange,
+  .danger {
+    width: 120px;
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .button-width {
+    width: 50%;
+  }
+
+  .quick-stats {
+    font-size: small;
+  }
+
+  .notes-width {
+    width: 100%;
+  }
+
+  .update-message {
+    width: 80%;
+  }
+}
+
+/* Small screens (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .main-container {
+    width: 95%;
+    padding-top: 15px;
+  }
+
+  .padding-right {
+    padding-right: 20px;
+  }
+
+  .medium-padding-left {
+    padding-left: 30px;
+  }
+
+  .big-padding-left {
+    padding-left: 50px;
+  }
+
+  .edit-padding-left {
+    padding-left: 50px;
+  }
+
+  .theme-button {
+    width: 160px;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .theme-button-mini,
+  .theme-button-mini-yellow,
+  .theme-button-mini-orange,
+  .danger {
+    width: 140px;
+    font-size: 14px;
+  }
+
+  .left-side {
+    width: 60%;
+  }
+
+  .button-width {
+    width: 45%;
+  }
+
+  .quick-stats {
+    font-size: medium;
+  }
+}
+
+/* Medium screens (1201px to 1600px) */
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .main-container {
+    width: 92%;
+  }
+
+  .padding-right {
+    padding-right: 40px;
+  }
+
+  .medium-padding-left {
+    padding-left: 60px;
+  }
+
+  .big-padding-left {
+    padding-left: 120px;
+  }
+
+  .edit-padding-left {
+    padding-left: 140px;
+  }
+
+  .theme-button {
+    width: 180px;
+  }
+
+  .theme-button-mini,
+  .theme-button-mini-yellow,
+  .theme-button-mini-orange,
+  .danger {
+    width: 160px;
+  }
+}
+
+/* Large screens (1601px and above) */
+@media (min-width: 1601px) {
+  .main-container {
+    width: 85%;
+    max-width: 1800px;
+  }
+
+  .padding-right {
+    padding-right: 80px;
+  }
+
+  .medium-padding-left {
+    padding-left: 120px;
+  }
+
+  .big-padding-left {
+    padding-left: 250px;
+  }
+
+  .edit-padding-left {
+    padding-left: 280px;
+  }
+
+  .theme-button {
+    width: 220px;
+    font-size: 20px;
+  }
+
+  .theme-button-mini,
+  .theme-button-mini-yellow,
+  .theme-button-mini-orange,
+  .danger {
+    width: 190px;
+    font-size: 18px;
+  }
+
+  .quick-stats {
+    font-size: x-large;
+  }
+}
+
+/* Responsive container utility */
+.responsive-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .responsive-container {
+    width: 98%;
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .responsive-container {
+    width: 95%;
+    max-width: none;
+  }
+}
+
+@media (min-width: 1601px) {
+  .responsive-container {
+    max-width: 1200px;
+  }
 }

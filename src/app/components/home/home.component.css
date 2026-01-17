@@ -3,7 +3,7 @@
 ; Title: home.component.css
 ; Author: Chris Gorham
 ; Date Created: 05 August 2023
-; Last Updated: 04 June 2024
+; Last Updated: 17 January 2026
 ; Description: This code supports styling for the Home Component
 ; Sources Used: N/A
 ;=====================================
@@ -17,10 +17,83 @@
 td {
   padding-left: 8px;
   padding-right: 8px;
+  white-space: nowrap;
 }
 
 bold {
   font-weight:bolder;
 }
 
+/* Ensure content stays within the card - allow horizontal scroll */
+.quick-stats {
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
 
+
+/* Responsive styles */
+.responsive-column {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home-table {
+    font-size: 12px;
+  }
+
+  td {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .quick-stats img {
+    width: 70%;
+  }
+
+  .responsive-column {
+    margin-bottom: 15px;
+  }
+}
+
+/* Small screens (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .home-table {
+    font-size: 14px;
+  }
+
+  td {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .quick-stats img {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1600px) {
+  .home-table {
+    font-size: 15px;
+  }
+
+  .quick-stats img {
+    width: 55%;
+  }
+}
+
+@media (min-width: 1601px) {
+  .home-table {
+    font-size: 17px;
+  }
+
+  td {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .quick-stats img {
+    width: 45%;
+  }
+}

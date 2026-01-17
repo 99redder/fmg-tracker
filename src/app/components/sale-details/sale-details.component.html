@@ -3,7 +3,7 @@
 ; Title: sale-details.component.html
 ; Author: Chris Gorham
 ; Date Created: 21 July 2023
-; Last Updated: 04 August 2023
+; Last Updated: 17 January 2026
 ; Description: This code supports the HTML functionality for the Sale Details Component
 ; Sources Used:
 ; Angular Forms Overview https://angular.io/guide/forms-overview
@@ -13,7 +13,7 @@
 -->
 
 
-  <div style="width: 800px; margin: auto;">
+  <div class="responsive-container">
     <div *ngIf="currentSale" class="edit-form">
     <h2>Edit A Sale</h2>
     <form>
@@ -42,60 +42,47 @@
       <br>
       <br>
       <!--Row 2-->
-      <div fxLayout="row" class="submit-form">
-        <div fxFlex="25"><label for="salesDate">Sales Date:</label></div>
-        <div fxFlex="25"><label for="salesPrice">Sales Price:</label></div>
-        <div fxFlex="25"><label for="etsyTransactionFee">Etsy Transaction Fee:</label></div>
-        <div fxFlex><label for="etsyMarketingFee">Etsy Marketing Fee:</label></div>
+      <div fxLayout="row wrap" class="submit-form">
+        <div fxFlex="25" fxFlex.lt-md="50"><label for="salesDate">Sales Date:</label></div>
+        <div fxFlex="25" fxFlex.lt-md="50"><label for="salesPrice">Sales Price:</label></div>
+        <div fxFlex="25" fxFlex.lt-md="50"><label for="etsyTransactionFee">Etsy Transaction Fee:</label></div>
+        <div fxFlex="25" fxFlex.lt-md="50"><label for="etsyMarketingFee">Etsy Marketing Fee:</label></div>
       </div>
-      <div fxLayout="row" class="submit-form">
-        <input type="text" class="form-control" id="salesDate" [(ngModel)]="currentSale.salesDate" name="salesDate">
-
-        <input type="text" class="form-control" id="salesPrice" [(ngModel)]="currentSale.salesPrice" name="salesPrice">
-
-        <input type="text" class="form-control" id="etsyTransactionFee"[(ngModel)]="currentSale.etsyTransactionFee" name="etsyTransactionFee">
-
-        <input
-        type="text"
-        class="form-control"
-        id="etsyMarketingFee"
-        [(ngModel)]="currentSale.etsyMarketingFee"
-        name="etsyMarketingFee">
+      <div fxLayout="row wrap" class="submit-form">
+        <div fxFlex="25" fxFlex.lt-md="50">
+          <input type="text" class="form-control" id="salesDate" [(ngModel)]="currentSale.salesDate" name="salesDate">
+        </div>
+        <div fxFlex="25" fxFlex.lt-md="50">
+          <input type="text" class="form-control" id="salesPrice" [(ngModel)]="currentSale.salesPrice" name="salesPrice">
+        </div>
+        <div fxFlex="25" fxFlex.lt-md="50">
+          <input type="text" class="form-control" id="etsyTransactionFee"[(ngModel)]="currentSale.etsyTransactionFee" name="etsyTransactionFee">
+        </div>
+        <div fxFlex="25" fxFlex.lt-md="50">
+          <input type="text" class="form-control" id="etsyMarketingFee" [(ngModel)]="currentSale.etsyMarketingFee" name="etsyMarketingFee">
+        </div>
       </div>
       <br>
       <!--Row 3-->
-      <div fxLayout="row" class="submit-form">
-        <div fxFlex="25"><label for="etsyProcessingFee">Etsy Processing Fee:</label></div>
-        <div fxFlex="25"><label for="etsyListingFee">Etsy Listing Fee:</label></div>
-        <div fxFlex="25"><label for="etsyShippingFee">Etsy Shipping Fee:</label></div>
-        <div fxFlex><label for="etsyShippingFee">Shipping Cost:</label></div>
+      <div fxLayout="row wrap" class="submit-form">
+        <div fxFlex="25" fxFlex.lt-md="50"><label for="etsyProcessingFee">Etsy Processing Fee:</label></div>
+        <div fxFlex="25" fxFlex.lt-md="50"><label for="etsyListingFee">Etsy Listing Fee:</label></div>
+        <div fxFlex="25" fxFlex.lt-md="50"><label for="etsyShippingFee">Etsy Shipping Fee:</label></div>
+        <div fxFlex="25" fxFlex.lt-md="50"><label for="etsyShippingFee">Shipping Cost:</label></div>
       </div>
-      <div fxLayout="row" class="submit-form">
-
-        <input
-        type="text"
-        class="form-control"
-        id="etsyProcessingFee"
-        [(ngModel)]="currentSale.etsyProcessingFee"
-        name="etsyProcessingFee">
-      <input
-        type="text"
-        class="form-control"
-        id="etsyListingFee"
-        [(ngModel)]="currentSale.etsyListingFee"
-        name="etsyListingFee">
-        <input
-        type="text"
-        class="form-control"
-        id="etsyShippingFee"
-        [(ngModel)]="currentSale.etsyShippingFee"
-        name="etsyShippingFee">
-        <input
-            type="text"
-            class="form-control"
-            id="shippingCost"
-            [(ngModel)]="currentSale.shippingCost"
-            name="shippingCost">
+      <div fxLayout="row wrap" class="submit-form">
+        <div fxFlex="25" fxFlex.lt-md="50">
+          <input type="text" class="form-control" id="etsyProcessingFee" [(ngModel)]="currentSale.etsyProcessingFee" name="etsyProcessingFee">
+        </div>
+        <div fxFlex="25" fxFlex.lt-md="50">
+          <input type="text" class="form-control" id="etsyListingFee" [(ngModel)]="currentSale.etsyListingFee" name="etsyListingFee">
+        </div>
+        <div fxFlex="25" fxFlex.lt-md="50">
+          <input type="text" class="form-control" id="etsyShippingFee" [(ngModel)]="currentSale.etsyShippingFee" name="etsyShippingFee">
+        </div>
+        <div fxFlex="25" fxFlex.lt-md="50">
+          <input type="text" class="form-control" id="shippingCost" [(ngModel)]="currentSale.shippingCost" name="shippingCost">
+        </div>
       </div>
       <br>
       <!--Row 4-->

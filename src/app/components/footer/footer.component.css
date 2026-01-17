@@ -3,7 +3,7 @@
 ; Title: footer.component.css
 ; Author: Chris Gorham
 ; Date Created: 10 September 2023
-; Last Updated: 10 September 2023
+; Last Updated: 17 January 2026
 ; Description: This code supports styling for the Footer Component
 ; Sources Used:
 ; How To Create Footer To Stay At The Bottom Of A Web Page? https://www.geeksforgeeks.org/how-to-create-footer-to-stay-at-the-bottom-of-a-web-page/#
@@ -15,4 +15,13 @@
   width: 100%;
   position: fixed;
   bottom: 0;
+  z-index: 1000;
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer {
+    min-height: 25px;
+    font-size: 12px;
+  }
 }

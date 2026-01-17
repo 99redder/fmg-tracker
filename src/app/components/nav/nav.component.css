@@ -1,0 +1,44 @@
+/*
+======================================
+; Title: nav.component.css
+; Author: Chris Gorham
+; Date Created: 10 September 2023
+; Last Updated: 17 January 2026
+; Description: This code supports styling for the Nav Component
+; Sources Used: N/A
+;=====================================
+*/
+
+/* Default styles */
+.logo img {
+  height: 40px;
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logo img {
+    height: 32px;
+  }
+
+  ::ng-deep .mat-toolbar-row {
+    padding: 0 8px;
+  }
+
+  ::ng-deep .mat-button {
+    font-size: 12px;
+    padding: 0 8px;
+    min-width: auto;
+  }
+}
+
+/* Small screens (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .logo img {
+    height: 36px;
+  }
+
+  ::ng-deep .mat-button {
+    font-size: 13px;
+    padding: 0 10px;
+  }
+}

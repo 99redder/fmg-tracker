@@ -1,1 +1,53 @@
+/*
+======================================
+; Title: sale-details.component.css
+; Author: Chris Gorham
+; Date Created: 21 July 2023
+; Last Updated: 17 January 2026
+; Description: This code supports CSS styling for the Sale Details Component
+; Sources Used: N/A
+;=====================================
+*/
 
+.edit-form {
+  width: 100%;
+}
+
+.form-control {
+  margin-right: 10px;
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .edit-form {
+    padding: 0 10px;
+  }
+
+  .form-control {
+    margin-right: 5px;
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .form-group label,
+  .submit-form label {
+    font-size: 12px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+/* Small screens (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .form-control {
+    margin-right: 8px;
+    font-size: 13px;
+  }
+
+  .form-group label,
+  .submit-form label {
+    font-size: 13px;
+  }
+}

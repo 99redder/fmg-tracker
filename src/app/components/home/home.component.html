@@ -3,7 +3,7 @@
 ; Title: home.component.html
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 05 December 2025
+; Last Updated: 17 January 2026
 ; Description: This code supports functionality for the home page and home component
 ; Sources Used: N/A
 =====================================
@@ -14,8 +14,8 @@
     <div fxLayout="row wrap">
 
       <!--First Column-->
-      <div fxFlex="40" class="padding-right">
-        <mat-card class="mat-elevation-z1 bg-light-green padding-right">
+      <div fxFlex="40" fxFlex.lt-lg="100" fxFlex.lt-md="100" class="responsive-column" style="padding-right: 10px;">
+        <mat-card class="mat-elevation-z1 bg-light-green">
 
           <mat-card-title></mat-card-title>
 
@@ -200,8 +200,8 @@
       </div>
 
       <!--Second Column-->
-      <div fxFlex="30" class="padding-right">
-        <mat-card class="mat-elevation-z1 bg-light-green padding-right">
+      <div fxFlex="30" fxFlex.lt-lg="50" fxFlex.lt-md="100" class="responsive-column" style="padding-right: 10px;">
+        <mat-card class="mat-elevation-z1 bg-light-green">
 
           <mat-card-title></mat-card-title>
 
@@ -374,7 +374,7 @@
       </div>
 
       <!--Third Column-->
-      <div fxFlex="30"class="padding-right">
+      <div fxFlex="30" fxFlex.lt-lg="50" fxFlex.lt-md="100" class="responsive-column" style="padding-right: 10px;">
         <mat-card class="bg-light-green mat-elevation-z1">
           <mat-card-title></mat-card-title>
           <mat-card-content>

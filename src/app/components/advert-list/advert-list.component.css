@@ -3,7 +3,7 @@
 ; Title: advert-list.component.css
 ; Author: Chris Gorham
 ; Date Created: 05 August 2023
-; Last Updated: 05 August 2023
+; Last Updated: 17 January 2026
 ; Description: This code supports CSS styling for the advert list component
 ; Sources Used: N/A
 ;=====================================
@@ -28,7 +28,8 @@
 }
 
 section {
-  width: 360px;
+  width: 100%;
+  max-width: 400px;
   background-color: lightgray;
   font: 16px/20px sans-serif;
   box-sizing: border-box;
@@ -41,8 +42,8 @@ section.collapsible {
 
 
 .button-position {
-text-align: right;
-padding-right: 300px;
+  text-align: right;
+  padding-right: 10%;
 }
 
 
@@ -68,7 +69,7 @@ padding-right: 300px;
 }
 
 .advert {
-  font-size: large;
+  font-size: medium;
   font-weight: bold;
 }
 
@@ -80,4 +81,69 @@ padding-right: 300px;
   text-align: end;
   font-size: medium;
   font-weight: bold;
+}
+
+/* Responsive styles */
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .button-position {
+    padding-right: 2%;
+    text-align: center;
+  }
+
+  .advert {
+    font-size: small;
+  }
+
+  .advert-charge {
+    font-size: x-small;
+  }
+
+  .orange, .yellow {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .refresh {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* Small screens (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .button-position {
+    padding-right: 5%;
+  }
+
+  .advert {
+    font-size: medium;
+  }
+
+  .advert-charge {
+    font-size: small;
+  }
+
+  .orange, .yellow {
+    padding: 8px;
+  }
+}
+
+@media (min-width: 1601px) {
+  .button-position {
+    padding-right: 15%;
+  }
+
+  .advert {
+    font-size: large;
+  }
+
+  .advert-charge {
+    font-size: medium;
+  }
+
+  .orange, .yellow {
+    padding: 12px;
+  }
 }

@@ -3,7 +3,7 @@
 ; Title: sign-in.component.css
 ; Author: Chris Gorham
 ; Date Created: 26 July 2023
-; Last Updated: 26 July 2023
+; Last Updated: 17 January 2026
 ; Description: This code supports login functionality
 ; Sources Used:
 ; Bellevue University WEB-425 Exercise 7.2 Instructions
@@ -11,8 +11,9 @@
 */
 
 .signin-container {
-  width: 35%;
-  margin: 15% auto;
+  width: 90%;
+  max-width: 450px;
+  margin: 10% auto;
 }
 
 .msg-error {
@@ -28,5 +29,35 @@
 
 .center {
   text-align: center;
+}
+
+/* Responsive styles */
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .signin-container {
+    width: 95%;
+    max-width: 400px;
+    margin: 5% auto;
+    padding: 20px;
+  }
+
+  .signin-container img {
+    width: 60%;
+  }
+}
+
+/* Small screens (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .signin-container {
+    margin: 8% auto;
+  }
+}
+
+@media (min-width: 1601px) {
+  .signin-container {
+    max-width: 500px;
+    margin: 12% auto;
+  }
 }
 

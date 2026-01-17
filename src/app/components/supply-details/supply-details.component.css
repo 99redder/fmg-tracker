@@ -1,0 +1,51 @@
+/*
+======================================
+; Title: supply-details.component.css
+; Author: Chris Gorham
+; Date Created: 27 July 2023
+; Last Updated: 17 January 2026
+; Description: This code supports CSS styling for the Supply Details Component
+; Sources Used: N/A
+;=====================================
+*/
+
+.edit-form {
+  width: 100%;
+}
+
+.form-control {
+  max-width: 400px;
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .edit-form {
+    padding: 0 10px;
+  }
+
+  .form-control {
+    font-size: 13px;
+    padding: 8px 10px;
+    max-width: 100%;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+/* Small screens (1025px to 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .form-control {
+    font-size: 14px;
+    max-width: 350px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+}
