@@ -3,7 +3,7 @@
 ; Title: api.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 August 2023
-; Last Updated: 05 December 2025
+; Last Updated: 17 January 2026
 ; Description: This code is for all Query / API services and functions
 ; Sources Used: N/A
 ;=====================================
@@ -13,6 +13,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
 
   // base path to the queries API
-  private baseUrl = 'http://localhost:8080/queries';
+  private baseUrl = environment.apiUrl + '/queries';
 
   constructor(private http: HttpClient) { }
 
