@@ -3,7 +3,7 @@
 ; Title: sale.service.ts
 ; Author: Chris Gorham
 ; Date Created: 13 July 2023
-; Last Updated: 31 July 2023
+; Last Updated: 17 January 2026
 ; Description: This code all Sale services and functions
 ; Sources Used:
 ; BezKoder Angular 10 CRUD Application Tutorial https://www.bezkoder.com/angular-10-node-js-express-mysql/
@@ -14,9 +14,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 // sets the base url and API location
-const baseUrl = 'http://localhost:8080/api/sales';
+const baseUrl = environment.apiUrl + '/api/sales';
 
 @Injectable({
   providedIn: 'root'
