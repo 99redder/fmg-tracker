@@ -71,7 +71,7 @@
             }; let i = index"
             [class.active]="i == currentIndex"
             (click)="setActiveSupply(supply, i)"> <span class="supply">Supply {{ supply.id }} &nbsp;</span>
-          {{ supply.itemName }} purchased on: {{ supply.purchaseDate}}
+          {{ supply.itemName }} purchased on: {{ supply.purchaseDate | date:'yyyy-MM-dd'}}
 
           <!--Displays Total Item Cost only IF the Supply is Published-->
           <div *ngIf="supply.published == true" fxFlex class="itemTotal">Total Cost:&nbsp;{{ '$' + supply.itemTotalCost }}</div>
@@ -91,7 +91,7 @@
             </div>
             <div>
               <label><strong>Purchase Date:</strong></label>
-              {{ currentSupply.purchaseDate }}
+              {{ currentSupply.purchaseDate | date:'yyyy-MM-dd' }}
             </div>
             <div>
               <label><strong>Item Cost:</strong></label>

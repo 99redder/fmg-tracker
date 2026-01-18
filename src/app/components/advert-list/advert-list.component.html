@@ -71,7 +71,7 @@
             }; let i = index"
             [class.active]="i == currentIndex"
             (click)="setActiveAdvert(advert, i)"> <span class="advert">Advert {{ advert.id }} &nbsp;</span>
-          {{ advert.advertDescription }} charged on: {{ advert.dateCharged}}
+          {{ advert.advertDescription }} charged on: {{ advert.dateCharged | date:'yyyy-MM-dd'}}
 
           <!--Advert Amount to show if the Advert is Published-->
           <div *ngIf="advert.published == true" fxFlex class="advert-charge">Amount Charged:&nbsp;{{ '$' + (advert.amtCharged) }}</div>
@@ -91,7 +91,7 @@
             </div>
             <div>
               <label><strong>Date Charged:</strong></label>
-              {{ currentAdvert.dateCharged }}
+              {{ currentAdvert.dateCharged | date:'yyyy-MM-dd' }}
             </div>
             <div>
               <label><strong>Amount Charged:</strong></label>
