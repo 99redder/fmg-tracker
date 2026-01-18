@@ -3,7 +3,7 @@
 ; Title: sign-in.component.ts
 ; Author: Chris Gorham
 ; Date Created: 27 July 2023
-; Last Updated: 31 July 2023
+; Last Updated: 18 January 2026
 ; Description: This code supports functionality for the Sign-In Component
 ; Sources Used:
 ; Angular Forms Overview https://angular.io/guide/forms-overview
@@ -44,14 +44,20 @@ export class SignInComponent implements OnInit {
     // pulls loginCode from what the user types into the form
     const loginCode = formValues.loginCode;
 
-    // if loginCode is good, establish the user as a session user and let them navigate to the home page
-    if (this.signinService.validate(loginCode)) {
-      this.cookieService.set('session_user', loginCode.toString(), 1);
-      this.router.navigate(['/'])
-    // if loginCode is not good, display an error message
-    } else {
-      this.errorMessage = 'The login code that you entered is invalid, please try again.';
-    }
+    // call the backend API to validate the login code
+    this.signinService.validate(loginCode).subscribe(
+      (response) => {
+        // if loginCode is good, establish the user as a session user and let them navigate to the home page
+        if (response.success) {
+          this.cookieService.set('session_user', 'authenticated', 1);
+          this.router.navigate(['/']);
+        }
+      },
+      (error) => {
+        // if loginCode is not good, display an error message
+        this.errorMessage = 'The login code that you entered is invalid, please try again.';
+      }
+    );
   }
 
 }

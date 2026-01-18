@@ -3,29 +3,29 @@
 ; Title: sign-in.service.ts
 ; Author: Chris Gorham
 ; Date Created: 26 July 2023
-; Last Updated: 26 July 2023
+; Last Updated: 18 January 2026
 ; Description: This code supports the sign-in functionality
 ; Sources Used:
 ; Bellevue University WEB-425 Exercise 7.2 Instructions
 ;=====================================
 */
 
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignInService {
 
- loginCodes: Array<string>;
+  constructor(private http: HttpClient) { }
 
-  constructor() {
-    // login codes that will be accepted for sign-in
-    this.loginCodes = ['Pass1234', 'Pass6278'];
-  }
-
-  validate(loginCode: string) {
-    // .some returns a true or false value for the loginCode value
-    return this.loginCodes.some(code => code === loginCode);
+  validate(loginCode: string): Observable<{ success: boolean }> {
+    return this.http.post<{ success: boolean }>(
+      `${environment.apiUrl}/auth/login`,
+      { loginCode }
+    );
   }
 }
