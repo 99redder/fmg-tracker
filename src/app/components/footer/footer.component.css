@@ -3,7 +3,7 @@
 ; Title: footer.component.css
 ; Author: Chris Gorham
 ; Date Created: 10 September 2023
-; Last Updated: 17 January 2026
+; Last Updated: 18 January 2026
 ; Description: This code supports styling for the Footer Component
 ; Sources Used:
 ; How To Create Footer To Stay At The Bottom Of A Web Page? https://www.geeksforgeeks.org/how-to-create-footer-to-stay-at-the-bottom-of-a-web-page/#
@@ -26,7 +26,12 @@
   }
 }
 
-link {
+:any-link {
+  text-decoration: none;
+  color: red;
+}
+
+:visited {
   text-decoration: none;
   color: red;
 }
