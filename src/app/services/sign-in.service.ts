@@ -24,7 +24,7 @@ export class SignInService {
 
   validate(loginCode: string): Observable<{ success: boolean }> {
     return this.http.post<{ success: boolean }>(
-      `${environment.apiUrl}/auth/login`,
+      `${environment.apiUrl}/api/auth/login`,
       { loginCode }
     );
   }
