@@ -3,7 +3,7 @@
 ; Title: supplies-list.component.html
 ; Author: Chris Gorham
 ; Date Created: 27 July 2023
-; Last Updated: 17 January 2026
+; Last Updated: 01 February 2026
 ; Description: This code supports the HTML functionality for the Supplies List Component
 ; Sources Used: N/A
 ;=====================================
@@ -71,7 +71,7 @@
             }; let i = index"
             [class.active]="i == currentIndex"
             (click)="setActiveSupply(supply, i)"> <span class="supply">Supply {{ supply.id }} &nbsp;</span>
-          {{ supply.itemName }} purchased on: {{ supply.purchaseDate | date:'yyyy-MM-dd'}}
+          {{ supply.itemName }} purchased on: {{ supply.purchaseDate | date:'yyyy-MM-dd':'UTC'}}
 
           <!--Displays Total Item Cost only IF the Supply is Published-->
           <div *ngIf="supply.published == true" fxFlex class="itemTotal">Total Cost:&nbsp;{{ '$' + supply.itemTotalCost }}</div>
@@ -91,7 +91,7 @@
             </div>
             <div>
               <label><strong>Purchase Date:</strong></label>
-              {{ currentSupply.purchaseDate | date:'yyyy-MM-dd' }}
+              {{ currentSupply.purchaseDate | date:'yyyy-MM-dd':'UTC' }}
             </div>
             <div>
               <label><strong>Item Cost:</strong></label>

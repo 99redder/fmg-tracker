@@ -3,7 +3,7 @@
 ; Title: advert-list.component.html
 ; Author: Chris Gorham
 ; Date Created: 05 August 2023
-; Last Updated: 17 January 2026
+; Last Updated: 01 February 2026
 ; Description: This code supports the HTML functionality for the Advert List Component
 ; Sources Used: N/A
 ;=====================================
@@ -71,7 +71,7 @@
             }; let i = index"
             [class.active]="i == currentIndex"
             (click)="setActiveAdvert(advert, i)"> <span class="advert">Advert {{ advert.id }} &nbsp;</span>
-          {{ advert.advertDescription }} charged on: {{ advert.dateCharged | date:'yyyy-MM-dd'}}
+          {{ advert.advertDescription }} charged on: {{ advert.dateCharged | date:'yyyy-MM-dd':'UTC'}}
 
           <!--Advert Amount to show if the Advert is Published-->
           <div *ngIf="advert.published == true" fxFlex class="advert-charge">Amount Charged:&nbsp;{{ '$' + (advert.amtCharged) }}</div>
@@ -91,7 +91,7 @@
             </div>
             <div>
               <label><strong>Date Charged:</strong></label>
-              {{ currentAdvert.dateCharged | date:'yyyy-MM-dd' }}
+              {{ currentAdvert.dateCharged | date:'yyyy-MM-dd':'UTC' }}
             </div>
             <div>
               <label><strong>Amount Charged:</strong></label>
