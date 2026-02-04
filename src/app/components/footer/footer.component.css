@@ -11,18 +11,36 @@
 */
 
 .footer {
-  min-height: 30px;
+  min-height: 22px;
   width: 100%;
   position: fixed;
   bottom: 0;
   z-index: 1000;
 }
 
+.footer-inner {
+  padding: 6px 0;
+}
+
+.footer-line {
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.1;
+}
+
+.footer-sep {
+  margin: 0 8px;
+  opacity: 0.8;
+}
+
 /* Tablets (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .footer {
-    min-height: 25px;
+    min-height: 20px;
     font-size: 12px;
+  }
+  .footer-inner {
+    padding: 5px 0;
   }
 }
 
