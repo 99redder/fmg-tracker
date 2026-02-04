@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: add-supply-dialog.component.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 13 August 2023
 ; Last Updated: 13 August 2023
 ; Description: This code supports functionality for the Add Supply Dialog Component

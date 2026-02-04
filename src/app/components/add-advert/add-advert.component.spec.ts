@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: add-advert.component.spec.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 05 August 2023
 ; Last Updated: 05 August 2023
 ; Description: This code supports functionality for the Add Advert Component

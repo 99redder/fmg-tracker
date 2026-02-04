@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: base-layout.component.spec.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 12 July 2023
 ; Last Updated: 31 July 2023
 ; Description: This code supports functionality for the Base Layout Component

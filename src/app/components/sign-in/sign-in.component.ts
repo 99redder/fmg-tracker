@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: sign-in.component.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 27 July 2023
 ; Last Updated: 18 January 2026
 ; Description: This code supports functionality for the Sign-In Component

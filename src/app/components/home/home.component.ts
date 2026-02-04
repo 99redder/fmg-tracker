@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: home.component.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 21 July 2023
 ; Last Updated: 05 December 2025
 ; Description: This code supports functionality for the Home Component

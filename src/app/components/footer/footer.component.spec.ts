@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: footer.component.spec.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 10 September 2023
 ; Last Updated: 10 September 2023
 ; Description: This code supports functionality for the Footer Component

@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: description.class.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 03 August 2023
 ; Last Updated: 10 September 2025
 ; Description: This code supports functionality for the Item Descriptions. If you need to add a new item, you can add it to the array below.

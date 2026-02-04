@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: add-sale-dialog.component.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 04 August 2023
 ; Last Updated: 04 August 2023
 ; Description: This code supports functionality for the Add Sale Dialog Component

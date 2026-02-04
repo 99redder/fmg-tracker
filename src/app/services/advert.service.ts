@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: advert.service.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 05 August 2023
 ; Last Updated: 17 January 2026
 ; Description: This code is for all Advert services and functions

@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: supplies-list.component.spec.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 12 July 2023
 ; Last Updated: 02 August 2023
 ; Description: This code supports functionality for the Supplies List Component

@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: sale.service.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 13 July 2023
 ; Last Updated: 17 January 2026
 ; Description: This code all Sale services and functions

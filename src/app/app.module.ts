@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: app.module.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 13 July 2023
 ; Last Updated: 27 August 2023
 ; Description: This code supports app module functionality

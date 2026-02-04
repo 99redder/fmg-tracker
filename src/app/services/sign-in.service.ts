@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: sign-in.service.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 26 July 2023
 ; Last Updated: 18 January 2026
 ; Description: This code supports the sign-in functionality

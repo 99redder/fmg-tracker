@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: description-create.component.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 03 August 2023
 ; Last Updated: 03 August 2023
 ; Description: This code supports functionality for the Description Create Component

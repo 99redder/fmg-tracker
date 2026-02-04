@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: supply.service.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 26 July 2023
 ; Last Updated: 17 January 2026
 ; Description: This code supports the Supply Service

@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: supply.service.spec.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 13 July 2023
 ; Last Updated: 31 July 2023
 ; Description: This code all Sale services and functions

@@ -1,7 +1,7 @@
 /*
 ======================================
 ; Title: add-sale.component.ts
-; Author: Chris Gorham
+; Author: Red
 ; Date Created: 12 July 2023
 ; Last Updated: 14 August 2023
 ; Description: This code supports functionality for the Add Sale Component
