@@ -3,7 +3,7 @@
 ; Title: description.class.ts
 ; Author: Red
 ; Date Created: 03 August 2023
-; Last Updated: 10 September 2025
+; Last Updated: 03 March 2026
 ; Description: This code supports functionality for the Item Descriptions. If you need to add a new item, you can add it to the array below.
 ; Sources Used: N/A
 ;=====================================
@@ -19,6 +19,10 @@ export class Description {
     // array of all the descriptions that will show up in the drop down menu
     this.descriptions =   [
       {description: "Select an Option"},
+      {description: "Alakazam Baby Photo Set (0-3 months)"},
+      {description: "Alakazam Baby Photo Set (3- months)"},
+      {description: "Alakazam Baby Photo Set (6-9 months)"},
+      {description: "Alakazam Baby Photo Set (9-12 months)"},
       {description: "Baby Gohan Hat (0-3 months)"},
       {description: "Baby Gohan Hat (3-6 months)"},
       {description: "Baby Gohan Hat (6-9 months)"},
@@ -89,6 +93,10 @@ export class Description {
       {description: "Super Saiyan Goku Hat (0-3 months)"},
       {description: "Super Saiyan Goku Hat (3-6 months)"},
       {description: "Super Saiyan Goku Hat (6-9 months)"},
+      {description: "Togepi Baby Photo Set (0-3 months)"},
+      {description: "Togepi Baby Photo Set (3-6 months)"},
+      {description: "Togepi Baby Photo Set (6-9 months)"},
+      {description: "Togepi Baby Photo Set (9-12 months)"},
       {description: "Trunks Diaper Set (0-3 months)"},
       {description: "Trunks Diaper Set (3-6 months)"},
       {description: "Trunks Diaper Set (6-9 months)"},
